@@ -1,7 +1,7 @@
 <template>
   <div class="card-columns col-12 col-md-8">
     <h1>Hey hey hey</h1>
-    <b-calendar>Hey</b-calendar>
+<!--    <b-calendar>Hey</b-calendar>-->
   </div>
 </template>
 

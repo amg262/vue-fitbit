@@ -45,7 +45,7 @@ export default {
     computed: {
       styles() {
         return {
-          height: `${ 200 }px`,
+          height: `${200}px`,
           position: 'relative'
         }
       }

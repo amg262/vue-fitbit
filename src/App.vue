@@ -4,14 +4,19 @@
   <div id="app">
 
 
-    <SidebarMenu >
-      asldkfasdf
-    </SidebarMenu>
+
       <div class="row">
 
         <div id="main">
-          <h1>Main Area</h1>
+          <h1>Vue Fitbit</h1>
 
+          <img src="./assets/logo.png"  height="128" width="128"/><img src="./assets/fitbit.png" height="128" width="128"/>
+          <br>
+          <br>
+          <SidebarMenu >
+            asldkfasdf
+          </SidebarMenu>
+          <RadarNew></RadarNew>
           <ScatterChart></ScatterChart>
           <RadarChart></RadarChart>
           <PolarAreaChart></PolarAreaChart>
@@ -78,6 +83,7 @@ import PieChart from "@/components/Pie"
 import PolarAreaChart from "@/components/PolarChart"
 import RadarChart from "@/components/Radar"
 import ScatterChart from "@/components/Scatter";
+import RadarNew from "@/components/RadarNew";
 // import {Cards} from "@/components/";
 // import {StatsCard} from "@/components";
 // import ChartRenderer from "@/components/ChartRenderer";
@@ -101,7 +107,8 @@ export default {
     PieChart,
     PolarAreaChart,
     RadarChart,
-    ScatterChart
+    ScatterChart,
+    RadarNew
     // Cards,
     // StatsCard,
     // ChartRenderer

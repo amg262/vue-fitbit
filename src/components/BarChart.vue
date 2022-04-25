@@ -13,17 +13,9 @@
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs/legacy'
+import {Bar} from 'vue-chartjs/legacy'
 
-import {
-  Chart as ChartJS,
-  Title,
-  Tooltip,
-  Legend,
-  BarElement,
-  CategoryScale,
-  LinearScale
-} from 'chart.js'
+import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
@@ -55,7 +47,8 @@ export default {
     },
     styles: {
       type: Object,
-      default: () => {}
+      default: () => {
+      }
     },
     plugins: {
       type: Array,

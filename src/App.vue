@@ -3,13 +3,54 @@
 
   <div id="app">
 
-    <img alt="Vue logo" src="./assets/logo.png">
-<!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-<!--    <SidebarMenu></SidebarMenu>-->
-    <UniversalLibrary>hi</UniversalLibrary>
-    <AdminDashboard></AdminDashboard>
-    <BarChart></BarChart>
-    <RenderChart></RenderChart>
+
+    <SidebarMenu >
+      asldkfasdf
+    </SidebarMenu>
+      <div class="row">
+
+        <div id="main">
+          <h1>Main Area</h1>
+
+          <b-col>
+            <cards></cards>
+          <stats-card title="Total traffic"
+                      type="gradient-red"
+                      sub-title="350,897"
+                      icon="ni ni-active-40"
+                      class="mb-4">
+
+            <template slot="footer">
+              <span class="text-success mr-2">3.48%</span>
+              <span class="text-nowrap">Since last month</span>
+            </template>
+          </stats-card>
+          </b-col>
+          <b-col xl="3" md="6">
+            <stats-card title="Total traffic"
+                        type="gradient-orange"
+                        sub-title="2,356"
+                        icon="ni ni-chart-pie-35"
+                        class="mb-4">
+
+              <template slot="footer">
+                <span class="text-success mr-2">12.18%</span>
+                <span class="text-nowrap">Since last month</span>
+              </template>
+            </stats-card>
+          </b-col>
+          <img alt="Vue logo" src="./assets/logo.png">
+          <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+          <!--    <SidebarMenu></SidebarMenu>-->
+          <UniversalLibrary>hi</UniversalLibrary>
+          <AdminDashboard></AdminDashboard>
+          <BarChart></BarChart>
+          <RenderChart></RenderChart>
+<!--          <line-chart></line-chart>-->
+        </div>
+      </div>
+
+
 
   </div>
 </template>
@@ -20,21 +61,31 @@ import UniversalLibrary from "@/components/UniversalDashboard"
 import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
 import RenderChart from "@/components/RenderChart";
+import SidebarMenu from "@/components/SidebarMenu";
+import {Cards} from "@/components/";
+import {StatsCard} from "@/components";
+// import LineChart from "@/components/Charts/LineChart";
 
 // import SidebarMenu from "@/components/SidebarMenu";
 export default {
   name: 'App',
   components: {
+    SidebarMenu,
 
     // HelloWorld,
     UniversalLibrary,
     AdminDashboard,
     BarChart,
     RenderChart,
+    Cards,
+    StatsCard,
+    // eslint-disable-next-line vue/no-unused-components
+    // LineChart
 
 
     // SidebarMenu
   }
+
 }
 </script>
 

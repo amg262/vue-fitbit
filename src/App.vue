@@ -12,34 +12,35 @@
         <div id="main">
           <h1>Main Area</h1>
 
+          <BubbleChart></BubbleChart>
 
-          <b-col>
-            <cards></cards>
-          <stats-card title="Total traffic"
-                      type="gradient-red"
-                      sub-title="350,897"
-                      icon="ni ni-active-40"
-                      class="mb-4">
+<!--          <b-col>-->
+<!--            <cards></cards>-->
+<!--          <stats-card title="Total traffic"-->
+<!--                      type="gradient-red"-->
+<!--                      sub-title="350,897"-->
+<!--                      icon="ni ni-active-40"-->
+<!--                      class="mb-4">-->
 
-            <template slot="footer">
-              <span class="text-success mr-2">3.48%</span>
-              <span class="text-nowrap">Since last month</span>
-            </template>
-          </stats-card>
-          </b-col>
-          <b-col xl="3" md="6">
-            <stats-card title="Total traffic"
-                        type="gradient-orange"
-                        sub-title="2,356"
-                        icon="ni ni-chart-pie-35"
-                        class="mb-4">
+<!--            <template slot="footer">-->
+<!--              <span class="text-success mr-2">3.48%</span>-->
+<!--              <span class="text-nowrap">Since last month</span>-->
+<!--            </template>-->
+<!--          </stats-card>-->
+<!--          </b-col>-->
+<!--          <b-col xl="3" md="6">-->
+<!--            <stats-card title="Total traffic"-->
+<!--                        type="gradient-orange"-->
+<!--                        sub-title="2,356"-->
+<!--                        icon="ni ni-chart-pie-35"-->
+<!--                        class="mb-4">-->
 
-              <template slot="footer">
-                <span class="text-success mr-2">12.18%</span>
-                <span class="text-nowrap">Since last month</span>
-              </template>
-            </stats-card>
-          </b-col>
+<!--              <template slot="footer">-->
+<!--                <span class="text-success mr-2">12.18%</span>-->
+<!--                <span class="text-nowrap">Since last month</span>-->
+<!--              </template>-->
+<!--            </stats-card>-->
+<!--          </b-col>-->
           <img alt="Vue logo" src="./assets/logo.png">
           <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
           <!--    <SidebarMenu></SidebarMenu>-->
@@ -63,8 +64,9 @@ import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
 import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
-import {Cards} from "@/components/";
-import {StatsCard} from "@/components";
+import BubbleChart from "@/components/BubbleChart";
+// import {Cards} from "@/components/";
+// import {StatsCard} from "@/components";
 // import ChartRenderer from "@/components/ChartRenderer";
 // import LineChart from "@/components/Charts/LineChart";
 
@@ -79,8 +81,9 @@ export default {
     AdminDashboard,
     BarChart,
     RenderChart,
-    Cards,
-    StatsCard,
+    BubbleChart
+    // Cards,
+    // StatsCard,
     // ChartRenderer
     // eslint-disable-next-line vue/no-unused-components
     // LineChart

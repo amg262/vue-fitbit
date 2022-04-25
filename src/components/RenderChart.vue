@@ -29,15 +29,15 @@ export default {
       this.loaded = false
       const access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
       try {
-        const {userlist} = fetch('https://api.fitbit.com/1/user/-/devices.json', {
+        let response = fetch('https://api.fitbit.com/1/user/-/devices.json', {
           method: "GET",
           headers: {"Authorization": "Bearer " + access_token}
         })
             .then(response => response.json())
             .then(json => console.log(json));
-        this.chartData = userlist
+        this.chartData = response.json();
         this.loaded = true
-        console.log(userlist)
+        console.log(response)
       } catch (e) {
         console.error(e)
       }

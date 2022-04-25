@@ -12,6 +12,8 @@
         <div id="main">
           <h1>Main Area</h1>
 
+          <LineChart></LineChart>
+          <DoughnutChart></DoughnutChart>
           <BubbleChart></BubbleChart>
 
 <!--          <b-col>-->
@@ -65,6 +67,9 @@ import BarChart from "@/components/BarChart";
 import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
 import BubbleChart from "@/components/BubbleChart";
+// import Doughnut from "@/components/Doughnut";
+import DoughnutChart from "@/components/Doughnut";
+import LineChart from "@/components/LineChart";
 // import {Cards} from "@/components/";
 // import {StatsCard} from "@/components";
 // import ChartRenderer from "@/components/ChartRenderer";
@@ -74,6 +79,7 @@ import BubbleChart from "@/components/BubbleChart";
 export default {
   name: 'App',
   components: {
+    // DoughnutChart,
     SidebarMenu,
 
     // HelloWorld,
@@ -81,7 +87,9 @@ export default {
     AdminDashboard,
     BarChart,
     RenderChart,
-    BubbleChart
+    BubbleChart,
+    DoughnutChart,
+    LineChart
     // Cards,
     // StatsCard,
     // ChartRenderer

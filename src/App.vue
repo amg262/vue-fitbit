@@ -12,6 +12,7 @@
         <div id="main">
           <h1>Main Area</h1>
 
+
           <b-col>
             <cards></cards>
           <stats-card title="Total traffic"
@@ -64,6 +65,7 @@ import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
 import {Cards} from "@/components/";
 import {StatsCard} from "@/components";
+// import ChartRenderer from "@/components/ChartRenderer";
 // import LineChart from "@/components/Charts/LineChart";
 
 // import SidebarMenu from "@/components/SidebarMenu";
@@ -79,6 +81,7 @@ export default {
     RenderChart,
     Cards,
     StatsCard,
+    // ChartRenderer
     // eslint-disable-next-line vue/no-unused-components
     // LineChart
 

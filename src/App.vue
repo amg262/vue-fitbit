@@ -16,14 +16,14 @@
           <SidebarMenu >
             asldkfasdf
           </SidebarMenu>
-          <RadarNew></RadarNew>
-          <ScatterChart></ScatterChart>
-          <RadarChart></RadarChart>
-          <PolarAreaChart></PolarAreaChart>
-          <PieChart></PieChart>
-          <LineChart></LineChart>
-          <DoughnutChart></DoughnutChart>
-          <BubbleChart></BubbleChart>
+<!--          <RadarNew></RadarNew>-->
+<!--          <ScatterChart></ScatterChart>-->
+<!--          <RadarChart></RadarChart>-->
+<!--          <PolarAreaChart></PolarAreaChart>-->
+<!--          <PieChart></PieChart>-->
+<!--          <LineChart></LineChart>-->
+<!--          <DoughnutChart></DoughnutChart>-->
+<!--          <BubbleChart></BubbleChart>-->
 
 <!--          <b-col>-->
 <!--            <cards></cards>-->
@@ -58,7 +58,7 @@
           <UniversalLibrary>hi</UniversalLibrary>
           <AdminDashboard></AdminDashboard>
           <BarChart></BarChart>
-          <RenderChart></RenderChart>
+<!--          <RenderChart></RenderChart>-->
 <!--          <line-chart></line-chart>-->
         </div>
       </div>
@@ -73,17 +73,17 @@
 import UniversalLibrary from "@/components/UniversalDashboard"
 import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
-import RenderChart from "@/components/RenderChart";
+// import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
-import BubbleChart from "@/components/BubbleChart";
-// import Doughnut from "@/components/Doughnut";
-import DoughnutChart from "@/components/Doughnut";
-import LineChart from "@/components/LineChart";
-import PieChart from "@/components/Pie"
-import PolarAreaChart from "@/components/PolarChart"
-import RadarChart from "@/components/Radar"
-import ScatterChart from "@/components/Scatter";
-import RadarNew from "@/components/RadarNew";
+// import BubbleChart from "@/components/BubbleChart";
+// // import Doughnut from "@/components/Doughnut";
+// import DoughnutChart from "@/components/Doughnut";
+// import LineChart from "@/components/LineChart";
+// import PieChart from "@/components/Pie"
+// import PolarAreaChart from "@/components/PolarChart"
+// import RadarChart from "@/components/Radar"
+// import ScatterChart from "@/components/Scatter";
+// import RadarNew from "@/components/RadarNew";
 // import {Cards} from "@/components/";
 // import {StatsCard} from "@/components";
 // import ChartRenderer from "@/components/ChartRenderer";
@@ -100,15 +100,15 @@ export default {
     UniversalLibrary,
     AdminDashboard,
     BarChart,
-    RenderChart,
-    BubbleChart,
-    DoughnutChart,
-    LineChart,
-    PieChart,
-    PolarAreaChart,
-    RadarChart,
-    ScatterChart,
-    RadarNew
+    // RenderChart,
+    // BubbleChart,
+    // DoughnutChart,
+    // LineChart,
+    // PieChart,
+    // PolarAreaChart,
+    // RadarChart,
+    // ScatterChart,
+    // RadarNew
     // Cards,
     // StatsCard,
     // ChartRenderer

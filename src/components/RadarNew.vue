@@ -184,7 +184,7 @@ export default {
 
               console.log(response.data.sleep)
 
-              this.chartData.datasets = response.data.sleep
+              this.chartData = response.data.sleep
               // if (response.data.results.length > 0) {
               //   this.queryResults = response.data.results;
               //   console.log(this.queryResults)

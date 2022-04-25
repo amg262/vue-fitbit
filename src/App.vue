@@ -12,6 +12,10 @@
         <div id="main">
           <h1>Main Area</h1>
 
+          <ScatterChart></ScatterChart>
+          <RadarChart></RadarChart>
+          <PolarAreaChart></PolarAreaChart>
+          <PieChart></PieChart>
           <LineChart></LineChart>
           <DoughnutChart></DoughnutChart>
           <BubbleChart></BubbleChart>
@@ -70,6 +74,10 @@ import BubbleChart from "@/components/BubbleChart";
 // import Doughnut from "@/components/Doughnut";
 import DoughnutChart from "@/components/Doughnut";
 import LineChart from "@/components/LineChart";
+import PieChart from "@/components/Pie"
+import PolarAreaChart from "@/components/PolarChart"
+import RadarChart from "@/components/Radar"
+import ScatterChart from "@/components/Scatter";
 // import {Cards} from "@/components/";
 // import {StatsCard} from "@/components";
 // import ChartRenderer from "@/components/ChartRenderer";
@@ -89,7 +97,11 @@ export default {
     RenderChart,
     BubbleChart,
     DoughnutChart,
-    LineChart
+    LineChart,
+    PieChart,
+    PolarAreaChart,
+    RadarChart,
+    ScatterChart
     // Cards,
     // StatsCard,
     // ChartRenderer

@@ -153,7 +153,7 @@ export default {
   //   }
   // },
   methods: {
-    query() {
+    async query() {
       // if (this.queryString) {
 
         const url = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
@@ -181,20 +181,24 @@ export default {
 
         axios.get(url, config,)
             .then(response => {
-              if (response.data.results.length > 0) {
-                this.queryResults = response.data.results;
-                console.log(this.queryResults)
-                this.chartData = response.json;
-                this.loaded = true
 
-              } else {
-                this.queryResults = [];
+              console.log(response.data.sleep)
 
-                console.error('No results', this.queryResults);
-
-              }
-
-              this.$emit('finished', this.queryResults);
+              this.chartData.datasets = response.data.sleep
+              // if (response.data.results.length > 0) {
+              //   this.queryResults = response.data.results;
+              //   console.log(this.queryResults)
+              //   this.chartData = response.json;
+              //   this.loaded = true
+              //
+              // } else {
+              //   this.queryResults = [];
+              //
+              //   console.error('No results', this.queryResults);
+              //
+              // }
+              //
+              // this.$emit('finished', this.queryResults);
 
             })
             .catch(error => {

@@ -33,6 +33,8 @@
         <UniversalLibrary>hi</UniversalLibrary>
         <AdminDashboard></AdminDashboard>
         <BarChart></BarChart>
+        <NavBar>shrfht</NavBar>
+
         <!--          <RenderChart></RenderChart>-->
         <!--          <line-chart></line-chart>-->
       </div>
@@ -45,6 +47,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 
+import NavBar from "@/components/NavBar";
 import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
 import DateRangeForm from "@/components/DateRangeForm";
@@ -77,6 +80,7 @@ export default {
     UniversalLibrary,
     AdminDashboard,
     BarChart,
+    NavBar,
     // RenderChart,
     // BubbleChart,
     // DoughnutChart,

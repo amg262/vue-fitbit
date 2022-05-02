@@ -4,65 +4,39 @@
   <div id="app">
 
 
+    <div class="row">
 
-      <div class="row">
+      <div id="main">
+        <h1>Vue Fitbit</h1>
 
-        <div id="main">
-          <h1>Vue Fitbit</h1>
+        <img src="./assets/logo.png" height="128" width="128"/><img src="./assets/fitbit.png" height="128" width="128"/>
+        <br>
+        <br>
+        <DateRangeForm @change="add"></DateRangeForm>
+        <SidebarMenu>
+          asldkfasdf
+        </SidebarMenu>
+        <!--          <RadarNew></RadarNew>-->
+        <!--          <ScatterChart></ScatterChart>-->
+        <!--          <RadarChart></RadarChart>-->
+        <!--          <PolarAreaChart></PolarAreaChart>-->
+        <!--          <PieChart></PieChart>-->
+        <!--          <LineChart></LineChart>-->
+        <!--          <DoughnutChart></DoughnutChart>-->
+        <!--          <BubbleChart></BubbleChart>-->
 
-          <img src="./assets/logo.png"  height="128" width="128"/><img src="./assets/fitbit.png" height="128" width="128"/>
-          <br>
-          <br>
-          <SidebarMenu >
-            asldkfasdf
-          </SidebarMenu>
-<!--          <RadarNew></RadarNew>-->
-<!--          <ScatterChart></ScatterChart>-->
-<!--          <RadarChart></RadarChart>-->
-<!--          <PolarAreaChart></PolarAreaChart>-->
-<!--          <PieChart></PieChart>-->
-<!--          <LineChart></LineChart>-->
-<!--          <DoughnutChart></DoughnutChart>-->
-<!--          <BubbleChart></BubbleChart>-->
+        <img alt="Vue logo" src="./assets/logo.png">
+        <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+        <!--    <SidebarMenu></SidebarMenu>-->
 
-<!--          <b-col>-->
-<!--            <cards></cards>-->
-<!--          <stats-card title="Total traffic"-->
-<!--                      type="gradient-red"-->
-<!--                      sub-title="350,897"-->
-<!--                      icon="ni ni-active-40"-->
-<!--                      class="mb-4">-->
 
-<!--            <template slot="footer">-->
-<!--              <span class="text-success mr-2">3.48%</span>-->
-<!--              <span class="text-nowrap">Since last month</span>-->
-<!--            </template>-->
-<!--          </stats-card>-->
-<!--          </b-col>-->
-<!--          <b-col xl="3" md="6">-->
-<!--            <stats-card title="Total traffic"-->
-<!--                        type="gradient-orange"-->
-<!--                        sub-title="2,356"-->
-<!--                        icon="ni ni-chart-pie-35"-->
-<!--                        class="mb-4">-->
-
-<!--              <template slot="footer">-->
-<!--                <span class="text-success mr-2">12.18%</span>-->
-<!--                <span class="text-nowrap">Since last month</span>-->
-<!--              </template>-->
-<!--            </stats-card>-->
-<!--          </b-col>-->
-          <img alt="Vue logo" src="./assets/logo.png">
-          <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-          <!--    <SidebarMenu></SidebarMenu>-->
-          <UniversalLibrary>hi</UniversalLibrary>
-          <AdminDashboard></AdminDashboard>
-          <BarChart></BarChart>
-<!--          <RenderChart></RenderChart>-->
-<!--          <line-chart></line-chart>-->
-        </div>
+        <UniversalLibrary>hi</UniversalLibrary>
+        <AdminDashboard></AdminDashboard>
+        <BarChart></BarChart>
+        <!--          <RenderChart></RenderChart>-->
+        <!--          <line-chart></line-chart>-->
       </div>
-
+    </div>
 
 
   </div>
@@ -70,11 +44,13 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import UniversalLibrary from "@/components/UniversalDashboard"
+
 import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
+import DateRangeForm from "@/components/DateRangeForm";
 // import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
+import UniversalLibrary from "@/components/c/UniversalLibrary";
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
 // import DoughnutChart from "@/components/Doughnut";
@@ -93,6 +69,7 @@ import SidebarMenu from "@/components/SidebarMenu";
 export default {
   name: 'App',
   components: {
+    DateRangeForm,
     // DoughnutChart,
     SidebarMenu,
 
@@ -117,8 +94,25 @@ export default {
 
 
     // SidebarMenu
+  },
+  data() {
+    return {
+      // library: new LibraryCollection(),
+      // libraryBasket: new LibraryBasketCollection()
+    }
+  },
+  methods: {
+    add: function () {
+      alert('hi')
+    },
+    // remove: function (item) {
+    //   this.libraryBasket.removeBasketItem(item);
+    // },
+    // display: function () {
+    //
+    //
+    // },
   }
-
 }
 </script>
 

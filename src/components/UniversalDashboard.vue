@@ -9,7 +9,7 @@
 
 
 export default {
-  name: "UniversalLibrary",
+  name: "UniversalDashboard",
   components: {},
   props: {},
   data() {

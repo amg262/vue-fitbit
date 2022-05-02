@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-navbar toggleable="lg" type="dark" variant="success">
+    <b-navbar toggleable="lg" type="dark" variant="primary" id="nava">
       <b-container>
         <b-navbar-brand href="#">Mealzers</b-navbar-brand>
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -19,7 +19,8 @@
                   class="my-2 my-sm-0"
                   type="submit"
                   @click.prevent="getMeal"
-              >Search</b-button>
+              >Search
+              </b-button>
             </b-nav-form>
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
@@ -40,6 +41,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+//$myBlue: #c800ff;
+//#nava {
+//  color: $myBlue;
+//  background-color: $myBlue;
+//}
 </style>

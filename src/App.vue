@@ -54,6 +54,7 @@ import DateRangeForm from "@/components/DateRangeForm";
 // import RenderChart from "@/components/RenderChart";
 import SidebarMenu from "@/components/SidebarMenu";
 import UniversalLibrary from "@/components/c/UniversalLibrary";
+import {colors} from '@/models/Colors.js'
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
 // import DoughnutChart from "@/components/Doughnut";
@@ -81,6 +82,7 @@ export default {
     AdminDashboard,
     BarChart,
     NavBar,
+    colors,
     // RenderChart,
     // BubbleChart,
     // DoughnutChart,
@@ -107,8 +109,10 @@ export default {
   },
   methods: {
     add: function () {
+      let colors = colors.primary
       alert('hi')
     },
+
     // remove: function (item) {
     //   this.libraryBasket.removeBasketItem(item);
     // },

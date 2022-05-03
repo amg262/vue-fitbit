@@ -19,7 +19,7 @@ import {Bar} from 'vue-chartjs/legacy'
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 import axios from "axios";
 import '../models/ApiRequest'
-import {BuildRequestUri} from "@/models/ApiRequest";
+import {makeGetRequest} from "@/models/ApiRequest";
 // import {hi} from '../models/Help';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
@@ -30,7 +30,7 @@ export default {
     Bar,
   },
   props: {
-    url223: {
+    resp: {
       type: String
     },
     chartId: {
@@ -122,10 +122,14 @@ export default {
   },
   data() {
     // let hihi = hi();
-    //let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
     //let obj = new BuildUriRequest(url2);
-    let b = new BuildRequestUri('he','hsd');
-    console.log(b.h);
+    // let b = new BuildRequestUri('he','hsd');
+    // console.log(b.h);
+    //let bb = new BuildRequestUri(url2);
+    //let resp = processThat(url2);
+
+    //console.log(bb.process());
+    //console.log(bb.iterate())
     return {
 
       //loaded: false,
@@ -159,8 +163,10 @@ export default {
     }
   },
   mounted() {
+    let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
 
-
+    // console.log(processThat(url2));
+    console.log(makeGetRequest(url2));
     // let b = new BuildUriRequest('ha','hods');
 
     //const resp = ApiRequest(url);

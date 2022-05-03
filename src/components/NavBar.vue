@@ -11,7 +11,8 @@
           <b-nav-item href="#">Link</b-nav-item>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
-
+        <router-link to="/">Go to Home</router-link>
+        <router-link to="/about">Go to About</router-link>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
 

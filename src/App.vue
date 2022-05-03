@@ -2,7 +2,11 @@
 
 
   <div id="app" class="container-fluid">
-
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav>
+    <router-view/>
     <NavBar class="sticky-top"></NavBar>
     <div class="row">
       <BarChart></BarChart>
@@ -21,7 +25,8 @@
 
 import NavBar from "@/components/NavBar";
 import BarChart from "@/components/BarChart";
-import {Colors} from '@/models/Colors.js'
+import {themeColors} from '@/models/Colors.js'
+import VueRouter from "@/router";
 
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
@@ -42,11 +47,12 @@ export default {
   name: 'App',
   components: {
 
-
+    // eslint-disable-next-line vue/no-unused-components
+    VueRouter,
     BarChart,
     NavBar,
     // eslint-disable-next-line vue/no-unused-components
-    Colors
+    themeColors
     // RenderChart,
     // BubbleChart,
     // DoughnutChart,

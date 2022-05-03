@@ -18,7 +18,10 @@ import {Bar} from 'vue-chartjs/legacy'
 
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 import axios from "axios";
-import {ApiRequest} from '../models/ApiRequest'
+import '../models/ApiRequest'
+import {BuildRequestUri} from "@/models/ApiRequest";
+// import {hi} from '../models/Help';
+
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
@@ -27,6 +30,9 @@ export default {
     Bar,
   },
   props: {
+    url223: {
+      type: String
+    },
     chartId: {
       type: String,
       default: 'bar-chart'
@@ -115,8 +121,14 @@ export default {
     // }
   },
   data() {
+    // let hihi = hi();
+    //let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
+    //let obj = new BuildUriRequest(url2);
+    let b = new BuildRequestUri('he','hsd');
+    console.log(b.h);
     return {
-      loaded: false,
+
+      //loaded: false,
       chartData: {
         labels: [
           // 'January',
@@ -149,59 +161,52 @@ export default {
   mounted() {
 
 
+    // let b = new BuildUriRequest('ha','hods');
 
-    const url = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
-    // const li = 20;
-    // let access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
-    // let access_token = process.env.VUE_APP_FITBIT_API_KEY
+    //const resp = ApiRequest(url);
+    //console.log(this.obj)
 
-    const config = {
-      params: {
-        //bearer:access_token
-        // term: this.queryString,
-      },
-      headers: {
-        Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
-      }
-    }
-
-    // if (config.params.limit <= 10) {
-    //   config.params.limit = 11;
+    // const config = {
+    //   params: {
+    //     //bearer:access_token
+    //     // term: this.queryString,
+    //   },
+    //   headers: {
+    //     Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
+    //   }
     // }
-
-
-    axios.get(url, config,)
-        .then(response => {
-
-          console.log(response.data.sleep)
-
-          // this.chartData = response.data.sleep
-          response.data.sleep.forEach(sleep => {
-            this.chartData.labels.push(sleep.dateOfSleep)
-            this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-          })
-          //this.renderChart(this.chartData, this.chartOptions);
-          this.loaded = true;
-          // if (response.data.results.length > 0) {
-          //   this.queryResults = response.data.results;
-          //   console.log(this.queryResults)
-          //   this.chartData = response.json;
-          //   this.loaded = true
-          //
-          // } else {
-          //   this.queryResults = [];
-          //
-          //   console.error('No results', this.queryResults);
-          //
-          // }
-          //
-          // this.$emit('finished', this.queryResults);
-
-        })
-        .catch(error => {
-          console.log('AJAX SEARCH ERROR', error);
-
-        })
+    // axios.get(url, config,)
+    //     .then(response => {
+    //
+    //       console.log(response.data.sleep)
+    //
+    //       // this.chartData = response.data.sleep
+    //       response.data.sleep.forEach(sleep => {
+    //         this.chartData.labels.push(sleep.dateOfSleep)
+    //         this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+    //       })
+    //       //this.renderChart(this.chartData, this.chartOptions);
+    //       this.loaded = true;
+    //       // if (response.data.results.length > 0) {
+    //       //   this.queryResults = response.data.results;
+    //       //   console.log(this.queryResults)
+    //       //   this.chartData = response.json;
+    //       //   this.loaded = true
+    //       //
+    //       // } else {
+    //       //   this.queryResults = [];
+    //       //
+    //       //   console.error('No results', this.queryResults);
+    //       //
+    //       // }
+    //       //
+    //       // this.$emit('finished', this.queryResults);
+    //
+    //     })
+    //     .catch(error => {
+    //       console.log('AJAX SEARCH ERROR', error);
+    //
+    //     })
   }
 }
 </script>

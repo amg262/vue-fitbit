@@ -11,12 +11,13 @@
           <b-nav-item href="#">Link</b-nav-item>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav>
-        <router-link to="/">Go to Home</router-link>
-        <router-link to="/about">Go to About</router-link>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
 
           <b-nav-item-dropdown text="Lang" right>
+            <router-link to="/">Home</router-link> |
+            <router-link to="/about">About</router-link>
+            <router-view/>
             <b-dropdown-item href="#">EN</b-dropdown-item>
             <b-dropdown-item href="#">ES</b-dropdown-item>
             <b-dropdown-item href="#">RU</b-dropdown-item>

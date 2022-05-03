@@ -21,7 +21,7 @@
 
 import NavBar from "@/components/NavBar";
 import BarChart from "@/components/BarChart";
-import {colors} from '@/models/colors.js'
+import {Colors} from '@/models/Colors.js'
 
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
@@ -46,7 +46,7 @@ export default {
     BarChart,
     NavBar,
     // eslint-disable-next-line vue/no-unused-components
-    colors
+    Colors
     // RenderChart,
     // BubbleChart,
     // DoughnutChart,
@@ -73,8 +73,8 @@ export default {
   },
   methods: {
     add: function () {
-      let colors = colors.primary
-      console.log(colors)
+      let themeColors = themeColors.primary;
+      console.log(themeColors)
       alert('hi')
     },
 

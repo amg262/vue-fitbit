@@ -1,4 +1,4 @@
-export let colors = {
+export let themeColors = {
     primary: '#336699'
 }
 export let palette = {

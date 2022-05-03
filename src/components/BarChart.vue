@@ -18,13 +18,13 @@ import {Bar} from 'vue-chartjs/legacy'
 
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 import axios from "axios";
-
+import {ApiRequest} from '../models/ApiRequest'
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
   name: 'BarChart',
   components: {
-    Bar
+    Bar,
   },
   props: {
     chartId: {

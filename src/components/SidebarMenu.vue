@@ -14,7 +14,7 @@
             that have a dashboard-like view of metrics like: heart rate, steps, calories, zone minutes, floors, sleep
             data, food, weight and also provide an input to that dataset via API.
           </p>
-          <nav class="mb-3">
+          <nav class="mb-3 sidebar-sticky">
             <b-nav vertical>
               <b-nav-item class="fa fa-dashboard" active @click="hide">Dashboard</b-nav-item>
               <b-nav-item href="#link-1" @click="hide">Bar Chart</b-nav-item>
@@ -72,6 +72,6 @@ export default {
 </script>
 <style scoped>
 .b-sidebar, #sidebar2 {
-  width: 200px !important;
+
 }
 </style>

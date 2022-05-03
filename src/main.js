@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 // import 'bootstrap/scss/bootstrap.scss'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './assets/style/app.scss';
+import './assets/style/client.css';
+
 Vue.config.productionTip = false
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)

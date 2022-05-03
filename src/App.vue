@@ -1,60 +1,28 @@
 <template>
 
 
-  <div id="app">
+  <div id="app" class="container-fluid">
 
-
+    <NavBar class="sticky-top"></NavBar>
     <div class="row">
-
-      <div id="main">
-        <h1>Vue Fitbit</h1>
-
-        <img src="./assets/logo.png" height="128" width="128"/><img src="./assets/fitbit.png" height="128" width="128"/>
-        <br>
-        <br>
-        <DateRangeForm @change="add"></DateRangeForm>
-        <SidebarMenu>
-          asldkfasdf
-        </SidebarMenu>
-        <!--          <RadarNew></RadarNew>-->
-        <!--          <ScatterChart></ScatterChart>-->
-        <!--          <RadarChart></RadarChart>-->
-        <!--          <PolarAreaChart></PolarAreaChart>-->
-        <!--          <PieChart></PieChart>-->
-        <!--          <LineChart></LineChart>-->
-        <!--          <DoughnutChart></DoughnutChart>-->
-        <!--          <BubbleChart></BubbleChart>-->
-
-        <img alt="Vue logo" src="./assets/logo.png">
-        <!--    <HelloWorld msg="Welcome to Your Vue.js App"/>-->
-        <!--    <SidebarMenu></SidebarMenu>-->
+      <BarChart></BarChart>
 
 
-        <UniversalLibrary>hi</UniversalLibrary>
-        <AdminDashboard></AdminDashboard>
-        <BarChart></BarChart>
-        <NavBar>shrfht</NavBar>
-
-        <!--          <RenderChart></RenderChart>-->
-        <!--          <line-chart></line-chart>-->
-      </div>
+      <!--          <RenderChart></RenderChart>-->
+      <!--          <line-chart></line-chart>-->
     </div>
-
-
   </div>
+
+
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 
 import NavBar from "@/components/NavBar";
-import AdminDashboard from "@/components/AdminDashboard";
 import BarChart from "@/components/BarChart";
-import DateRangeForm from "@/components/DateRangeForm";
-// import RenderChart from "@/components/RenderChart";
-import SidebarMenu from "@/components/SidebarMenu";
-import UniversalLibrary from "@/components/c/UniversalLibrary";
-import {colors} from '@/models/Colors.js'
+import {colors} from '@/models/colors.js'
+
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
 // import DoughnutChart from "@/components/Doughnut";
@@ -73,16 +41,12 @@ import {colors} from '@/models/Colors.js'
 export default {
   name: 'App',
   components: {
-    DateRangeForm,
-    // DoughnutChart,
-    SidebarMenu,
 
-    // HelloWorld,
-    UniversalLibrary,
-    AdminDashboard,
+
     BarChart,
     NavBar,
-    colors,
+    // eslint-disable-next-line vue/no-unused-components
+    colors
     // RenderChart,
     // BubbleChart,
     // DoughnutChart,
@@ -110,6 +74,7 @@ export default {
   methods: {
     add: function () {
       let colors = colors.primary
+      console.log(colors)
       alert('hi')
     },
 
@@ -131,6 +96,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 0;
+  /*margin-top: 60px;*/
 }
 </style>

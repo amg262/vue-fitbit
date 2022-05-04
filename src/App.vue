@@ -26,7 +26,7 @@
 import NavBar from "@/components/NavBar";
 import BarChart from "@/components/BarChart";
 import {themeColors} from '@/models/Colors.js'
-import VueRouter from "@/router";
+import VueRouter from "vue-router";
 
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";

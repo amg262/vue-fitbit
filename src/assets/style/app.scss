@@ -6,4 +6,8 @@ $secondary3: #00ffd5;
 $tertiary: #32DE8A;
 $tertiary2: #00ff82;
 
+a {
+  color: $secondary !important;
+}
+
 @import "~bootstrap/scss/bootstrap";

@@ -21,9 +21,15 @@ import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title,
 // import axios from "axios";
 import '../models/ApiRequest'
 import {makeGetRequest,json } from "@/models/ApiRequest";
+
+import annotationPlugin from 'chartjs-plugin-annotation';
+
 // import {hi} from '../models/Help';
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, annotationPlugin)
+
+
+// ChartJS.register(annotationPlugin);
 
 export default {
   name: 'BarChart',

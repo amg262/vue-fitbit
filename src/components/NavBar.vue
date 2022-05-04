@@ -9,7 +9,16 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item href="#">Link</b-nav-item>
+          <router-link to="/">Home</router-link> |
+          <router-link to="/about">About</router-link>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
+          <router-link to="/">Home</router-link> |
+
+          <b-nav-item class="text-white">
+            <router-link to="/">Home</router-link> |
+
+          </b-nav-item>
+
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">

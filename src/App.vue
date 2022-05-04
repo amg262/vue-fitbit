@@ -2,20 +2,22 @@
 
 
   <div id="app" class="container-fluid">
+
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/>
     <NavBar class="sticky-top"></NavBar>
     <div class="row">
-      <BarChart identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=10"></BarChart>
-<!--      <BarChart identity="{{ json.sleepList}}"></BarChart>-->
+<!--      <BarChart identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=25"></BarChart>-->
+      <BarChart :identity="json.sleepList"></BarChart>
 
 
       <!--          <RenderChart></RenderChart>-->
       <!--          <line-chart></line-chart>-->
     </div>
+    <router-view/>
+
   </div>
 
 
@@ -30,7 +32,7 @@ import {themeColors} from '@/models/Colors.js'
 import VueRouter from "vue-router";
 
 
-// import json from "@/models/ApiRequest.js";
+import {json} from "@/models/ApiRequest.js";
 
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
@@ -76,7 +78,11 @@ export default {
     // SidebarMenu
   },
   data() {
+
+    console.log(json)
     return {
+
+      json
       // library: new LibraryCollection(),
       // libraryBasket: new LibraryBasketCollection()
     }

@@ -52,28 +52,19 @@ class BuildRequestUri_2 {
 async function makeGetRequest(url) {
 
     //let payload = { name: 'John Doe', occupation: 'gardener' };
-    // const config = {
-    //     method: 'get',
-    //     url: url,
-    //     headers: { 'Bearer': process.env.VUE_APP_FITBIT_API_KEY }
-    // }
-
-    const conf = {
-        params: {
-            //bearer:access_token
-            // term: this.queryString,
-        }, headers: {
-            Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
-        }
+    const config = {
+        method: 'get',
+        url: url,
+        headers: { 'Bearer': process.env.VUE_APP_FITBIT_API_KEY }
     }
     //const params = new url.URLSearchParams(payload);
-    let res = await axios(url, conf).then(resp => { return resp.data})
+    let res = await axios(url, conf)
 
     //let res = await axios.get(url);
 
-    return res.data;
-
-   // console.log(data.sleep);
+    let data = res.data;
+    // console.log(data);
+    return data;
 }
 
 
@@ -163,7 +154,7 @@ class BuildRequestUri {
 
 }
 
-export {BuildRequestUri, processThat, makeGetRequest, json, conf}
+export {BuildRequestUri, processThat, makeGetRequest}
 // const li = 20;
 // let access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
 // let access_token = process.env.VUE_APP_FITBIT_API_KEY

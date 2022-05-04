@@ -18,15 +18,21 @@ import {Bar} from 'vue-chartjs/legacy'
 
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 import axios from "axios";
+import '../models/ApiRequest'
+import {makeGetRequest} from "@/models/ApiRequest";
+// import {hi} from '../models/Help';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
   name: 'BarChart',
   components: {
-    Bar
+    Bar,
   },
   props: {
+    resp: {
+      type: String
+    },
     chartId: {
       type: String,
       default: 'bar-chart'
@@ -115,7 +121,17 @@ export default {
     // }
   },
   data() {
+    // let hihi = hi();
+    //let obj = new BuildUriRequest(url2);
+    // let b = new BuildRequestUri('he','hsd');
+    // console.log(b.h);
+    //let bb = new BuildRequestUri(url2);
+    //let resp = processThat(url2);
+
+    //console.log(bb.process());
+    //console.log(bb.iterate())
     return {
+
       loaded: false,
       chartData: {
         labels: [
@@ -146,15 +162,25 @@ export default {
       }
     }
   },
-  mounted() {
+  async mounted() {
+    let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
 
+    // console.log(processThat(url2));
+    let v = await makeGetRequest(url2);
+    console.log("1",v);
+    //console.log(makeGetRequest("2",url2));
+    v.sleep.forEach(sleep => {
+      this.chartData.labels.push(sleep.dateOfSleep)
+      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+    })
+    //this.renderChart(this.chartData, this.chartOptions);
+    this.loaded = true;
+    // let b = new BuildUriRequest('ha','hods');
 
+    //const resp = ApiRequest(url);
+    //console.log(this.obj)
 
-    const url = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
-    // const li = 20;
-    // let access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
-    // let access_token = process.env.VUE_APP_FITBIT_API_KEY
-
+    /*
     const config = {
       params: {
         //bearer:access_token
@@ -164,13 +190,7 @@ export default {
         Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
       }
     }
-
-    // if (config.params.limit <= 10) {
-    //   config.params.limit = 11;
-    // }
-
-
-    axios.get(url, config,)
+    axios.get(url2, config,)
         .then(response => {
 
           console.log(response.data.sleep)
@@ -201,7 +221,7 @@ export default {
         .catch(error => {
           console.log('AJAX SEARCH ERROR', error);
 
-        })
+        })*/
   }
 }
 </script>

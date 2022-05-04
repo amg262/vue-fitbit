@@ -28,6 +28,8 @@ import NavBar from "@/components/NavBar";
 import BarChart from "@/components/BarChart";
 import {themeColors} from '@/models/Colors.js'
 import VueRouter from "vue-router";
+
+
 // import json from "@/models/ApiRequest.js";
 
 // import BubbleChart from "@/components/BubbleChart";

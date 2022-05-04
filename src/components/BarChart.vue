@@ -10,6 +10,7 @@
       :width="width"
       :height="height"
       v-if="loaded"
+      :identity="identity"
   />
 </template>
 
@@ -30,7 +31,7 @@ export default {
     Bar,
   },
   props: {
-    resp: {
+    identity: {
       type: String
     },
     chartId: {
@@ -71,7 +72,6 @@ export default {
   data() {
 
     return {
-
       loaded: false,
       chartData: {
         labels: [
@@ -103,9 +103,13 @@ export default {
     }
   },
   async mounted() {
+
+    // This is the URL w'ell be using
     //let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
 
-    let v = await makeGetRequest(json.sleepList);
+    console.log(this.identity)
+    console.log(json)
+    let v = await makeGetRequest(this.identity);
 
     v.sleep.forEach(sleep => {
       this.chartData.labels.push(sleep.dateOfSleep)

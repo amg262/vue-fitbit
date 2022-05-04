@@ -8,14 +8,7 @@
       <router-link to="/about">About</router-link>
     </nav>
     <NavBar class="sticky-top"></NavBar>
-    <div class="row">
-<!--      <BarChart identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=25"></BarChart>-->
-      <BarChart :identity="json.sleepList"></BarChart>
 
-
-      <!--          <RenderChart></RenderChart>-->
-      <!--          <line-chart></line-chart>-->
-    </div>
     <router-view/>
 
   </div>
@@ -27,7 +20,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 
 import NavBar from "@/components/NavBar";
-import BarChart from "@/components/BarChart";
+// import BarChart from "@/components/BarChart";
 import {themeColors} from '@/models/Colors.js'
 import VueRouter from "vue-router";
 
@@ -55,7 +48,7 @@ export default {
 
     // eslint-disable-next-line vue/no-unused-components
     VueRouter,
-    BarChart,
+    // BarChart,
     NavBar,
     // eslint-disable-next-line vue/no-unused-components
     themeColors

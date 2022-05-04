@@ -63,7 +63,8 @@ async function makeGetRequest(url) {
     //let res = await axios.get(url);
 
     let data = res.data;
-    console.log(data);
+    // console.log(data);
+    return data;
 }
 
 

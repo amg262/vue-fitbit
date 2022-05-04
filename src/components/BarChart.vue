@@ -166,7 +166,10 @@ export default {
     let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
 
     // console.log(processThat(url2));
-    console.log(makeGetRequest(url2));
+    var v = makeGetRequest(url2);
+    console.log("1",v);
+    //console.log(makeGetRequest("2",url2));
+
     // let b = new BuildUriRequest('ha','hods');
 
     //const resp = ApiRequest(url);

@@ -132,7 +132,7 @@ export default {
     //console.log(bb.iterate())
     return {
 
-      //loaded: false,
+      loaded: false,
       chartData: {
         labels: [
           // 'January',
@@ -169,53 +169,59 @@ export default {
     let v = await makeGetRequest(url2);
     console.log("1",v);
     //console.log(makeGetRequest("2",url2));
-
+    v.sleep.forEach(sleep => {
+      this.chartData.labels.push(sleep.dateOfSleep)
+      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+    })
+    //this.renderChart(this.chartData, this.chartOptions);
+    this.loaded = true;
     // let b = new BuildUriRequest('ha','hods');
 
     //const resp = ApiRequest(url);
     //console.log(this.obj)
 
-    // const config = {
-    //   params: {
-    //     //bearer:access_token
-    //     // term: this.queryString,
-    //   },
-    //   headers: {
-    //     Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
-    //   }
-    // }
-    // axios.get(url, config,)
-    //     .then(response => {
-    //
-    //       console.log(response.data.sleep)
-    //
-    //       // this.chartData = response.data.sleep
-    //       response.data.sleep.forEach(sleep => {
-    //         this.chartData.labels.push(sleep.dateOfSleep)
-    //         this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-    //       })
-    //       //this.renderChart(this.chartData, this.chartOptions);
-    //       this.loaded = true;
-    //       // if (response.data.results.length > 0) {
-    //       //   this.queryResults = response.data.results;
-    //       //   console.log(this.queryResults)
-    //       //   this.chartData = response.json;
-    //       //   this.loaded = true
-    //       //
-    //       // } else {
-    //       //   this.queryResults = [];
-    //       //
-    //       //   console.error('No results', this.queryResults);
-    //       //
-    //       // }
-    //       //
-    //       // this.$emit('finished', this.queryResults);
-    //
-    //     })
-    //     .catch(error => {
-    //       console.log('AJAX SEARCH ERROR', error);
-    //
-    //     })
+    /*
+    const config = {
+      params: {
+        //bearer:access_token
+        // term: this.queryString,
+      },
+      headers: {
+        Authorization: `Bearer ${process.env.VUE_APP_FITBIT_API_KEY}`
+      }
+    }
+    axios.get(url2, config,)
+        .then(response => {
+
+          console.log(response.data.sleep)
+
+          // this.chartData = response.data.sleep
+          response.data.sleep.forEach(sleep => {
+            this.chartData.labels.push(sleep.dateOfSleep)
+            this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+          })
+          //this.renderChart(this.chartData, this.chartOptions);
+          this.loaded = true;
+          // if (response.data.results.length > 0) {
+          //   this.queryResults = response.data.results;
+          //   console.log(this.queryResults)
+          //   this.chartData = response.json;
+          //   this.loaded = true
+          //
+          // } else {
+          //   this.queryResults = [];
+          //
+          //   console.error('No results', this.queryResults);
+          //
+          // }
+          //
+          // this.$emit('finished', this.queryResults);
+
+        })
+        .catch(error => {
+          console.log('AJAX SEARCH ERROR', error);
+
+        })*/
   }
 }
 </script>

@@ -28,6 +28,12 @@ export default {
     PolarArea
   },
   props: {
+    chartId: {
+      type: String,
+      default: 'polar-chart'
+    },
+
+
     identity: {
       type: String
     },
@@ -49,10 +55,7 @@ export default {
     chartCalculation: {
       type: Number
     },
-    chartId: {
-      type: String,
-      default: 'polar-chart'
-    },
+
     datasetIdKey: {
       type: String,
       default: 'label'

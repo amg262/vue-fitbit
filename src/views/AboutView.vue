@@ -18,7 +18,7 @@
     <br />
 
     <PolarChart
-        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
         chart-label="Ten Day Sleep Log"
         chart-background="#008CFFFF"
     >

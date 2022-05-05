@@ -34,6 +34,15 @@ export default {
     chartLabel: {
       type: String,
     },
+    chartLabel2: {
+      type: String,
+    },
+    chartLabel3: {
+      type: String,
+    },
+    chartLabel4: {
+      type: String,
+    },
     chartBackground: {
       type: String,
     },
@@ -116,8 +125,16 @@ export default {
           {
             label: this.chartLabel,
             backgroundColor: this.chartBackground,
+            pointBackgroundcolor: "#b907ff",
             data: []
-          }
+          },
+
+          {
+            label: this.chartLabel2,
+            backgroundColor: "#ffc107",
+            data:[],
+          },
+
         ]
       },
       chartOptions: {
@@ -137,7 +154,11 @@ export default {
       // eslint-disable-next-line vue/no-mutating-props
       // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
       this.chartData.labels.push(sleep.dateOfSleep)
+      this.chartData.labels.push("Efficieny")
+
+      // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
       this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+      this.chartData.datasets[1].data.push(sleep.efficiency/ 10)
     })
 
     this.loaded = true;

@@ -62,9 +62,7 @@ async function makeGetRequest(url) {
     }
     //const params = new url.URLSearchParams(payload);
     let res = await axios(url, conf)
-
-
-
+    console.log(this, res)
     return res.data;
 }
 

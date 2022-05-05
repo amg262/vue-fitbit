@@ -2,30 +2,26 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="primary">
       <b-navbar-brand href="#"></b-navbar-brand>
-      <img src="../assets/logo.png" width="50" height="50" alt="logo" />
-      <img src="../assets/fitbit.png" width="50" height="50" alt="logo" />
+      <img src="../assets/logo.png" width="50" height="50" alt="logo"/>
+      <img src="../assets/fitbit.png" width="50" height="50" alt="logo"/>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item href="#">Link</b-nav-item>
-          <router-link to="/">Home</router-link> |
-          <router-link to="/about">About</router-link>
-          <b-nav-item href="#" disabled>Disabled</b-nav-item>
-          <router-link to="/">Home</router-link> |
-
-          <b-nav-item class="text-white">
-            <router-link to="/">Home</router-link> |
-
+          <b-nav-item>
+            <router-link to="/">Home</router-link>
           </b-nav-item>
+          <b-nav-item>
+            <router-link to="/about">About</router-link>
+          </b-nav-item>
+
 
         </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
 
           <b-nav-item-dropdown text="Lang" right>
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
             <router-view/>
             <b-dropdown-item href="#">EN</b-dropdown-item>
             <b-dropdown-item href="#">ES</b-dropdown-item>
@@ -51,9 +47,7 @@
 
 export default {
   name: "Nav-Bar",
-  components: {
-
-  }
+  components: {}
 }
 </script>
 

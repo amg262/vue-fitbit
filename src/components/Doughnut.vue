@@ -9,6 +9,8 @@
       :styles="styles"
       :width="width"
       :height="height"
+      v-if="loaded"
+      :identity="identity"
   />
 </template>
 
@@ -16,6 +18,7 @@
 import {Doughnut} from 'vue-chartjs/legacy'
 
 import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip} from 'chart.js'
+import {json, makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
@@ -25,6 +28,19 @@ export default {
     Doughnut
   },
   props: {
+    identity: {
+      type: String
+    },
+    chartLabel: {
+      type: String,
+    },
+    chartBackground: {
+      type: String,
+    },
+    chartCalculation: {
+      type: Number
+    },
+
     chartId: {
       type: String,
       default: 'doughnut-chart'
@@ -59,11 +75,13 @@ export default {
     return {
       chartData: {
         //labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
-        labels: ['Packers', 'Chiefs', 'Chargers', 'Bears'],
+        labels: [],
         datasets: [
           {
-            backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-            data: [80, 20, 10, 10]
+            labels: this.chartLabel,
+
+            backgroundColor: this.chartBackground,
+            data: []
           }
         ]
       },
@@ -72,6 +90,24 @@ export default {
         maintainAspectRatio: false
       }
     }
+
+  },
+  async mounted() {
+
+    console.log(this.identity)
+    console.log(json)
+    let v = await makeGetRequest(this.identity);
+
+    v.sleep.forEach(sleep => {
+
+      // eslint-disable-next-line vue/no-mutating-props
+      // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+      this.chartData.labels.push(sleep.dateOfSleep)
+      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+    })
+
+    this.loaded = true;
   }
 }
 </script>

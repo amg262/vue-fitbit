@@ -20,7 +20,7 @@ import {Bar} from 'vue-chartjs/legacy'
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 // import axios from "axios";
 import '../models/ApiRequest'
-import {makeGetRequest,json } from "@/models/ApiRequest";
+import {json, makeGetRequest} from "@/models/ApiRequest";
 
 import annotationPlugin from 'chartjs-plugin-annotation';
 
@@ -40,6 +40,16 @@ export default {
     identity: {
       type: String
     },
+    chartLabel: {
+      type: String,
+    },
+    chartBackground: {
+      type: String,
+    },
+    chartCalculation: {
+      type: Number
+    },
+
     chartId: {
       type: String,
       default: 'bar-chart'
@@ -73,31 +83,18 @@ export default {
   methods: {
     async query() {
 
-     }
+    }
   },
   data() {
 
     return {
       loaded: false,
       chartData: {
-        labels: [
-          // 'January',
-          // 'February',
-          // 'March',
-          // 'April',
-          // 'May',
-          // 'June',
-          // 'July',
-          // 'August',
-          // 'September',
-          // 'October',
-          // 'November',
-          // 'December'
-        ],
+        labels: [],
         datasets: [
           {
-            label: 'Data One',
-            backgroundColor: '#f87979',
+            label: this.chartLabel,
+            backgroundColor: this.chartBackground,
             data: []
           }
         ]
@@ -110,14 +107,15 @@ export default {
   },
   async mounted() {
 
-    // This is the URL w'ell be using
-    //let url2 = 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
-
     console.log(this.identity)
     console.log(json)
     let v = await makeGetRequest(this.identity);
 
     v.sleep.forEach(sleep => {
+
+      // eslint-disable-next-line vue/no-mutating-props
+      this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
       this.chartData.labels.push(sleep.dateOfSleep)
       this.chartData.datasets[0].data.push(sleep.duration / 3600000)
     })

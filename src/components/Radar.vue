@@ -125,6 +125,7 @@ export default {
       // }
       // }
       loaded: false,
+
       chartData: {
         labels: [],
         datasets: [

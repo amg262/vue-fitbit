@@ -49,11 +49,11 @@
             chart-label="Ten Day Sleep Log"
             chart-background="#008CFFFF"
             method-name="sleepRadar"
-
         >
         </RadarChart>
       </b-col>
     </b-row>
+
 <!--    <br/>-->
 <!--    <br/>-->
 <!--    <Scatter-->

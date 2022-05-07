@@ -73,15 +73,13 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       chartData: {
-        //labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
-        labels: ["hey"],
+        labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
         datasets: [
           {
-            //labels: this.chartLabel,
-
-            backgroundColor: this.chartBackground,
-            data: []
+            backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
+            data: [40, 20, 80, 10]
           }
         ]
       },

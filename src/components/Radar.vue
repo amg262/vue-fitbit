@@ -11,6 +11,8 @@
       :height="height"
       v-if="loaded"
       :identity="identity"
+      :methodName="methodName"
+
   />
 </template>
 
@@ -55,7 +57,9 @@ export default {
     chartLabel4: {
       type: String,
     },
-
+    methodName: {
+      type: String
+    },
 
     datasetIdKey: {
       type: String,
@@ -160,26 +164,34 @@ export default {
       },
     }
   },
+  methods: {
+    async sleepRadar() {
+      console.log(this.identity)
+      console.log(json)
+      let v = await makeGetRequest(this.identity);
+
+      v.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateOfSleep)
+
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[0].data.push(sleep.minutesAsleep / 60)
+        this.chartData.datasets[1].data.push(sleep.efficiency / 10)
+        this.chartData.datasets[2].data.push(sleep.minutesAwake / 60)
+        this.chartData.datasets[3].data.push(sleep.timeInBed / 60)
+      })
+
+      this.loaded = true;
+    },
+  },
   async mounted() {
 
-    console.log(this.identity)
-    console.log(json)
-    let v = await makeGetRequest(this.identity);
+    if (this.methodName === 'sleepRadar') {
+      this.sleepRadar()
+    }
 
-    v.sleep.forEach(sleep => {
-
-      // eslint-disable-next-line vue/no-mutating-props
-      // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
-      this.chartData.labels.push(sleep.dateOfSleep)
-
-      // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
-      this.chartData.datasets[0].data.push(sleep.minutesAsleep / 60)
-      this.chartData.datasets[1].data.push(sleep.efficiency / 10)
-      this.chartData.datasets[2].data.push(sleep.minutesAwake / 60)
-      this.chartData.datasets[3].data.push(sleep.timeInBed / 60)
-    })
-
-    this.loaded = true;
   }
 }
 </script>

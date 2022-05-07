@@ -11,6 +11,7 @@
       :height="height"
       v-if="loaded"
       :identity="identity"
+      :methodName="methodName"
   />
 </template>
 
@@ -54,6 +55,10 @@ export default {
     },
     chartCalculation: {
       type: Number
+    },
+
+    methodName: {
+      type: String
     },
 
     datasetIdKey: {
@@ -146,25 +151,34 @@ export default {
       }
     }
   },
+
+  methods: {
+    async sleepPolar() {
+      console.log(this.identity)
+      console.log(json)
+      let v = await makeGetRequest(this.identity);
+
+      v.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateOfSleep)
+        this.chartData.labels.push("Efficieny")
+
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+        this.chartData.datasets[1].data.push(sleep.efficiency/ 10)
+      })
+
+      this.loaded = true;
+    }
+  },
   async mounted() {
 
-    console.log(this.identity)
-    console.log(json)
-    let v = await makeGetRequest(this.identity);
+    if (this.methodName === 'sleepPolar') {
+      this.sleepPolar();
+    }
 
-    v.sleep.forEach(sleep => {
-
-      // eslint-disable-next-line vue/no-mutating-props
-      // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
-      this.chartData.labels.push(sleep.dateOfSleep)
-      this.chartData.labels.push("Efficieny")
-
-      // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
-      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-      this.chartData.datasets[1].data.push(sleep.efficiency/ 10)
-    })
-
-    this.loaded = true;
   }
 
 }

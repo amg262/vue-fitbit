@@ -2,7 +2,7 @@
   <div class="about">
     <h1>This is an about page</h1>
     <BarChart
-        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
         chart-label="Ten Day Sleep Log"
         chart-background="#008CFFFF"
         method-name="sleepBar"
@@ -17,9 +17,9 @@
 <!--    </BarChart>-->
 <!--    <br/>-->
     <LineChartGenerator
-        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
         chart-label="Ten Day Sleep Log"
-        chart-background="#008CFFFF"
+        chart-background="#ff7c00"
         method-name="sleepLine"
     >
     </LineChartGenerator>
@@ -31,26 +31,29 @@
 <!--    >-->
 <!--    </LineChartGenerator>-->
 <!--    <br/>-->
-<!--    <b-row>-->
+    <b-row>
 
-<!--      <b-col>-->
-<!--        <PolarChart-->
-<!--            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"-->
-<!--            chart-label="Ten Day Sleep Log"-->
-<!--            chart-background="#008CFFFF"-->
-<!--        >-->
-<!--        </PolarChart>-->
-<!--      </b-col>-->
-<!--      <br/>-->
-<!--      <b-col>-->
-<!--        <RadarChart-->
-<!--            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
-<!--            chart-label="Ten Day Sleep Log"-->
-<!--            chart-background="#008CFFFF"-->
-<!--        >-->
-<!--        </RadarChart>-->
-<!--      </b-col>-->
-<!--    </b-row>-->
+      <b-col>
+        <PolarChart
+            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
+            chart-label="Ten Day Sleep Log"
+            chart-background="#008CFFFF"
+            method-name="sleepPolar"
+        >
+        </PolarChart>
+      </b-col>
+      <br/>
+      <b-col>
+        <RadarChart
+            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
+            chart-label="Ten Day Sleep Log"
+            chart-background="#008CFFFF"
+            method-name="sleepRadar"
+
+        >
+        </RadarChart>
+      </b-col>
+    </b-row>
 <!--    <br/>-->
 <!--    <br/>-->
 <!--    <Scatter-->
@@ -83,8 +86,8 @@ import BarChart from "@/components/BarChart";
 import LineChartGenerator from "@/components/LineChart";
 // import LineChartGenerator from "@/components/LineChart";
 // import Doughnut from "@/components/Doughnut";
-// import PolarChart from "@/components/PolarChart";
-// // import Radar from "@/components/Radar";
+import PolarChart from "@/components/PolarChart";
+import RadarChart from "@/components/Radar";
 // import RadarChart from "@/components/Radar";
 // import Scatter from "@/components/Scatter";
 
@@ -92,10 +95,10 @@ import LineChartGenerator from "@/components/LineChart";
 export default {
   name: 'App',
   components: {
-    // RadarChart,
+    RadarChart,
     BarChart,
     LineChartGenerator,
-    // PolarChart,
+    PolarChart,
     //
     // Doughnut,
     // Scatter,

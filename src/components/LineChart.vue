@@ -145,19 +145,9 @@ export default {
   },
   async mounted() {
 
-    console.log(this.identity)
-    console.log(json)
-    let v = await makeGetRequest(this.identity);
-
-    v.sleep.forEach(sleep => {
-
-      // eslint-disable-next-line vue/no-mutating-props
-      // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
-      this.chartData.labels.push(sleep.dateOfSleep)
-      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-    })
-
-    this.loaded = true;
+    if (this.methodName ==='sleepLine') {
+      this.sleepLine();
+    }
   }
 }
 </script>

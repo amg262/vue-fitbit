@@ -6,8 +6,51 @@ $secondary3: #00ffd5;
 $tertiary: #32DE8A;
 $tertiary2: #00ff82;
 
-a {
-  color: $secondary !important;
+* {
+  font-family: Verdana, sans-serif;
+}
+.fb-no-underline {
+  text-decoration: none;
+}
+.fb-no-underline:hover {
+  color:$secondary;
+}
+.fb-navbar {
+}
+.fb-navbar a {
+  color: $secondary;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.fb-navbar a:hover, .fb-navbar a:active {
+  color: $tertiary;
+  text-decoration: none;
 }
 
+.fb-page {
+
+}
+
+.fb-left {
+  text-align: left;
+}
+.fb-avatar {
+  border-radius: 100%;
+}
+
+div {
+  font-size: 16px;
+}
+
+h1.fb-heading {
+  margin:1%;
+}
+
+p {
+  font-size:16px;
+}
+h1, h2, h3, h4, h5, h6 {
+  color:$primary;
+}
 @import "~bootstrap/scss/bootstrap";

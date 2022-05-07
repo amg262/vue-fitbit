@@ -3,10 +3,6 @@
 
   <div id="app" class="container-fluid">
 
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
     <NavBar class="sticky-top"></NavBar>
 
     <router-view/>
@@ -23,9 +19,6 @@ import NavBar from "@/components/NavBar";
 // import BarChart from "@/components/BarChart";
 import {themeColors} from '@/models/Colors.js'
 import VueRouter from "vue-router";
-
-
-import {json} from "@/models/ApiRequest.js";
 
 // import BubbleChart from "@/components/BubbleChart";
 // // import Doughnut from "@/components/Doughnut";
@@ -72,12 +65,9 @@ export default {
   },
   data() {
 
-    console.log(json)
+
     return {
 
-      json
-      // library: new LibraryCollection(),
-      // libraryBasket: new LibraryBasketCollection()
     }
   },
   methods: {

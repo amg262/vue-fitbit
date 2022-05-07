@@ -18,7 +18,7 @@
 import {Doughnut} from 'vue-chartjs/legacy'
 
 import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip} from 'chart.js'
-import {json, makeGetRequest} from "@/models/ApiRequest";
+// import {json, makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
@@ -75,10 +75,10 @@ export default {
     return {
       chartData: {
         //labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
-        labels: [],
+        labels: ["hey"],
         datasets: [
           {
-            labels: this.chartLabel,
+            //labels: this.chartLabel,
 
             backgroundColor: this.chartBackground,
             data: []
@@ -94,18 +94,18 @@ export default {
   },
   async mounted() {
 
-    console.log(this.identity)
-    console.log(json)
-    let v = await makeGetRequest(this.identity);
-
-    v.sleep.forEach(sleep => {
-
-      // eslint-disable-next-line vue/no-mutating-props
-      // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
-
-      this.chartData.labels.push(sleep.dateOfSleep)
-      this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-    })
+    // console.log(this.identity)
+    // console.log(json)
+    // let v = await makeGetRequest(this.identity);
+    //
+    // v.sleep.forEach(sleep => {
+    //
+    //   // eslint-disable-next-line vue/no-mutating-props
+    //   // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+    //   console.log(sleep)
+    //   this.chartData.labels.push("hey")
+    //   this.chartData.datasets[0].data.push([10, 20, 30, 40])
+    // })
 
     this.loaded = true;
   }

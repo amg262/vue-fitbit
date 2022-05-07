@@ -9,6 +9,9 @@
       :styles="styles"
       :width="width"
       :height="height"
+      v-if="loaded"
+      :identity="identity"
+      :method-name="methodName"
   />
 </template>
 
@@ -16,6 +19,7 @@
 import {Pie} from 'vue-chartjs/legacy'
 
 import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip} from 'chart.js'
+// import {makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
 
@@ -29,6 +33,22 @@ export default {
       type: String,
       default: 'pie-chart'
     },
+    identity: {
+      type: String
+    },
+    chartLabel: {
+      type: String,
+    },
+    chartBackground: {
+      type: String,
+    },
+    chartCalculation: {
+      type: Number
+    },
+    methodName: {
+      type: String,
+    },
+
     datasetIdKey: {
       type: String,
       default: 'label'
@@ -57,13 +77,16 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       chartData: {
         //labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
-        labels: ['Packers', 'Chiefs', 'Chargers', 'Bears'],
+        labels: [],
         datasets: [
           {
-            backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-            data: [80, 20, 10, 10]
+            // backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
+            // data: [1, 1, 10, 10]
+            backgroundColor: [],
+            data: []
           }
         ]
       },
@@ -72,6 +95,30 @@ export default {
         maintainAspectRatio: false
       }
     }
+  },
+  methods: {
+    async deviceDough() {
+
+      //let v = this.identity;
+
+     //this.responseData = await makeGetRequest(this.identity);
+
+      let data = {
+        'backgroundColor': ["#41B883"],
+        'data': [25]
+      };
+      this.chartData.labels.push("two")
+      this.chartData.datasets.push(data);
+      console.log(this.chartData)
+
+    }
+  },
+  async mounted() {
+
+
+      this.deviceDough();
+
+    this.loaded = true;
   }
 }
 </script>

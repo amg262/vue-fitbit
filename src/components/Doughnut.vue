@@ -11,6 +11,7 @@
       :height="height"
       v-if="loaded"
       :identity="identity"
+      :method-name="methodName"
   />
 </template>
 
@@ -18,6 +19,7 @@
 import {Doughnut} from 'vue-chartjs/legacy'
 
 import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip} from 'chart.js'
+import {makeGetRequest} from "@/models/ApiRequest";
 // import {json, makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
@@ -39,6 +41,9 @@ export default {
     },
     chartCalculation: {
       type: Number
+    },
+    methodName: {
+      type: String,
     },
 
     chartId: {
@@ -74,12 +79,13 @@ export default {
   data() {
     return {
       loaded: false,
+      responseData: {},
       chartData: {
-        labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
+        labels: ['one'],
         datasets: [
           {
-            backgroundColor: ['#41B883', '#E46651', '#00D8FF', '#DD1B16'],
-            data: [40, 20, 80, 10]
+            backgroundColor: ['#41B883'],
+            data: [10]
           }
         ]
       },
@@ -90,21 +96,26 @@ export default {
     }
 
   },
+  methods: {
+    async deviceDough() {
+
+      this.responseData = await makeGetRequest(this.identity);
+
+      let arr = {
+        'backgroundColor': ["#41B883"],
+        'data': [25]
+      };
+      this.chartData.labels.push("two")
+      this.chartData.datasets.push(arr);
+      console.log(this.chartData)
+
+    }
+  },
   async mounted() {
 
-    // console.log(this.identity)
-    // console.log(json)
-    // let v = await makeGetRequest(this.identity);
-    //
-    // v.sleep.forEach(sleep => {
-    //
-    //   // eslint-disable-next-line vue/no-mutating-props
-    //   // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
-    //   console.log(sleep)
-    //   this.chartData.labels.push("hey")
-    //   this.chartData.datasets[0].data.push([10, 20, 30, 40])
-    // })
-
+    if (this.methodName === 'deviceDough') {
+      this.deviceDough();
+    }
     this.loaded = true;
   }
 }

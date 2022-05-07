@@ -1,6 +1,8 @@
 <template>
   <div class="row">
     <Doughnut
+        identity="https://api.fitbit.com/1/user/-/devices.json"
+        method-name="deviceDough"
     >
 
     </Doughnut>

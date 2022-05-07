@@ -1,41 +1,41 @@
-<template>
-  <div class="row fb-page body">
-    <h1 class="fb-heading">This is an user page</h1>
-    <p>
-      The User endpoints display information about the user's profile information, the regional locale & language settings, and their badges collected.
-    </p>
+<!--<template>-->
+<!--  <div class="row fb-page body">-->
+<!--    <h1 class="fb-heading">This is an user page</h1>-->
+<!--    <p>-->
+<!--      The User endpoints display information about the user's profile information, the regional locale & language settings, and their badges collected.-->
+<!--    </p>-->
 
-    <div class="row">
-        <UserProfile></UserProfile>
-    </div>
-  </div>
+<!--    <div class="row">-->
+<!--        <UserProfile></UserProfile>-->
+<!--    </div>-->
+<!--  </div>-->
 
-</template>
+<!--</template>-->
 
 
-<script>
+<!--<script>-->
 
-import UserProfile from "@/components/UserProfile";
+<!--import UserProfile from "@/components/UserProfile";-->
 
-export default {
-  name: 'UserView',
-  components: {
-    UserProfile
-  },
-  methods: {
+<!--export default {-->
+<!--  name: 'UserView',-->
+<!--  components: {-->
+<!--    UserProfile-->
+<!--  },-->
+<!--  methods: {-->
 
-  },
-  data() {
-    return {}
-  },
+<!--  },-->
+<!--  data() {-->
+<!--    return {}-->
+<!--  },-->
 
-  async mounted() {
+<!--  async mounted() {-->
 
-  }
-}
+<!--  }-->
+<!--}-->
 
-</script>
+<!--</script>-->
 
-<style scoped>
+<!--<style scoped>-->
 
-</style>
+<!--</style>-->

@@ -11,6 +11,7 @@
       :height="height"
       v-if="loaded"
       :identity="identity"
+      :methodName="methodName"
   />
 </template>
 
@@ -48,6 +49,9 @@ export default {
     chartCalculation: {
       type: Number
     },
+    methodName: {
+      type: String,
+    },
 
     chartId: {
       type: String,
@@ -79,6 +83,7 @@ export default {
       default: () => []
     }
   },
+
   data() {
     return {
       //   chartData: {
@@ -119,6 +124,23 @@ export default {
         responsive: true,
         maintainAspectRatio: false
       }
+    }
+  },
+  methods: {
+    async sleepLine() {
+      console.log(this.identity)
+      console.log(json)
+      let v = await makeGetRequest(this.identity);
+
+      v.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateOfSleep)
+        this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+      })
+
+      this.loaded = true;
     }
   },
   async mounted() {

@@ -1,12 +1,13 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-<!--    <BarChart-->
-<!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"-->
-<!--        chart-label="Ten Day Sleep Log"-->
-<!--        chart-background="#008CFFFF"-->
-<!--    >-->
-<!--    </BarChart>-->
+    <BarChart
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"
+        chart-label="Ten Day Sleep Log"
+        chart-background="#008CFFFF"
+        method-name="sleepBar"
+    >
+    </BarChart>
 <!--    <br/>-->
 <!--    <BarChart-->
 <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"-->
@@ -15,12 +16,13 @@
 <!--    >-->
 <!--    </BarChart>-->
 <!--    <br/>-->
-<!--    <LineChartGenerator-->
-<!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"-->
-<!--        chart-label="Ten Day Sleep Log"-->
-<!--        chart-background="#008CFFFF"-->
-<!--    >-->
-<!--    </LineChartGenerator>-->
+    <LineChartGenerator
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"
+        chart-label="Ten Day Sleep Log"
+        chart-background="#008CFFFF"
+        method-name="sleepLine"
+    >
+    </LineChartGenerator>
 <!--    <br/>-->
 <!--    <LineChartGenerator-->
 <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"-->
@@ -77,8 +79,8 @@
 <script>
 
 // import NavBar from "@/components/NavBar";
-// import BarChart from "@/components/BarChart";
-// // import LineChartGenerator from "@/components/LineChart";
+import BarChart from "@/components/BarChart";
+import LineChartGenerator from "@/components/LineChart";
 // import LineChartGenerator from "@/components/LineChart";
 // import Doughnut from "@/components/Doughnut";
 // import PolarChart from "@/components/PolarChart";
@@ -91,8 +93,8 @@ export default {
   name: 'App',
   components: {
     // RadarChart,
-    // BarChart,
-    // LineChartGenerator,
+    BarChart,
+    LineChartGenerator,
     // PolarChart,
     //
     // Doughnut,

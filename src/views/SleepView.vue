@@ -1,7 +1,7 @@
 <template>
   <div class="row fb-page body">
-    <h1 class="fb-heading">This is an body page</h1>
-    <p>The Body endpoints are used for querying and modifying the user 's body fat and weight data.</p>
+    <h1 class="fb-heading">This is an sleep page</h1>
+    <p>The Sleep endpoints are used for querying and modifying the sleep data.</p>
     <p>
       The endpoints in this section are:
     </p>

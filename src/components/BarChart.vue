@@ -89,9 +89,9 @@ export default {
     async sleepBar() {
       console.log(this.identity)
       console.log(json)
-      let v = await makeGetRequest(this.identity);
+      this.requestData = await makeGetRequest(this.identity);
 
-      v.sleep.forEach(sleep => {
+      this.requestData.sleep.forEach(sleep => {
 
         // eslint-disable-next-line vue/no-mutating-props
         this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
@@ -106,6 +106,7 @@ export default {
   data() {
     return {
       loaded: false,
+      requestData: {},
       chartData: {
         labels: [],
         datasets: [

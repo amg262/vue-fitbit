@@ -33,7 +33,7 @@
 <!--    <br/>-->
     <b-row>
 
-      <b-col>
+      <div class="col-md-6">
         <PolarChart
             identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
             chart-label="Ten Day Sleep Log"
@@ -41,9 +41,9 @@
             method-name="sleepPolar"
         >
         </PolarChart>
-      </b-col>
+      </div>
       <br/>
-      <b-col>
+      <div class="col-md-6">
         <RadarChart
             identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
             chart-label="Ten Day Sleep Log"
@@ -51,7 +51,7 @@
             method-name="sleepRadar"
         >
         </RadarChart>
-      </b-col>
+      </div>
     </b-row>
 
 <!--    <br/>-->

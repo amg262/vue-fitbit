@@ -1,7 +1,10 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <PieChart>
+    <PieChart
+        identity="https://api.fitbit.com/1/user/-/devices.json"
+        method-name="deviceDough"
+    >
 
     </PieChart>
   </div>

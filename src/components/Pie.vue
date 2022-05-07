@@ -19,6 +19,7 @@
 import {Pie} from 'vue-chartjs/legacy'
 
 import {ArcElement, CategoryScale, Chart as ChartJS, Legend, Title, Tooltip} from 'chart.js'
+import {makeGetRequest} from "@/models/ApiRequest";
 // import {makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale)
@@ -78,6 +79,7 @@ export default {
   data() {
     return {
       loaded: false,
+      responseData: {},
       chartData: {
         //labels: ['VueJs', 'EmberJs', 'ReactJs', 'AngularJs'],
         labels: [],
@@ -99,22 +101,24 @@ export default {
   methods: {
     async deviceDough() {
 
-      //let v = this.identity;
-
-     //this.responseData = await makeGetRequest(this.identity);
-
-      let data = {
-        'backgroundColor': ["#41B883"],
-        'data': [25]
-      };
-      this.chartData.labels.push("two")
-      this.chartData.datasets.push(data);
-      console.log(this.chartData)
 
     }
   },
   async mounted() {
 
+    //let v = this.identity;
+
+     this.responseData = await makeGetRequest(this.identity);
+
+    console.log(this.responseData)
+
+    let data = {
+      'backgroundColor': ["#41B883", "#FD0707FF"],
+      'data': [this.responseData[1].batteryLevel, (100 - this.responseData[1].batteryLevel)]
+    };
+    this.chartData.labels.push("Battery")
+    this.chartData.datasets.push(data);
+    console.log(this.chartData)
 
       this.deviceDough();
 

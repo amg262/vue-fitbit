@@ -18,23 +18,6 @@
       <DeviceAccount></DeviceAccount>
 
 
-      <div class="row">
-
-        <div class="col-md-6">
-          <PieChart
-              identity="https://api.fitbit.com/1/user/-/devices.json"
-              method-name="deviceDough"
-          ></PieChart>
-        </div>
-        <div class="col-md-6">
-          <Doughnut
-              identity="https://api.fitbit.com/1/user/-/devices.json"
-              method-name="deviceDough"
-          >
-
-          </Doughnut>
-        </div>
-      </div>
 
 
     </div>
@@ -52,21 +35,21 @@
 // import PolarChart from "@/components/PolarChart";
 // // import Radar from "@/components/Radar";
 // import RadarChart from "@/components/Radar";
-import PieChart from "@/components/Pie";
-import Doughnut from "@/components/Doughnut";
+// import PieChart from "@/components/Pie";
+// import Doughnut from "@/components/Doughnut";
 import DeviceAccount from "@/components/DeviceAccount";
 
 export default {
   name: 'App',
   components: {
     DeviceAccount,
-    PieChart,
-    // RadarChart,
-    // BarChart,
-    // LineChartGenerator,
-    // PolarChart,
-    //
-    Doughnut,
+    // PieChart,
+    // // RadarChart,
+    // // BarChart,
+    // // LineChartGenerator,
+    // // PolarChart,
+    // //
+    // Doughnut,
     // Scatter,
     // BarChart
   },

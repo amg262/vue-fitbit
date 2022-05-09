@@ -81,11 +81,11 @@ export default {
       loaded: false,
       responseData: {},
       chartData: {
-        labels: ['one'],
+        labels: [],
         datasets: [
           {
-            backgroundColor: ['#41B883'],
-            data: [10]
+            backgroundColor: [],
+            data: []
           }
         ]
       },
@@ -101,21 +101,27 @@ export default {
 
       this.responseData = await makeGetRequest(this.identity);
 
-      let arr = {
-        'backgroundColor': ["#41B883"],
-        'data': [25]
+      let data = {
+        'backgroundColor': ["#41B883", "#FD0707FF"],
+        'data': [this.responseData[1].batteryLevel, (100 - this.responseData[1].batteryLevel)]
       };
-      this.chartData.labels.push("two")
-      this.chartData.datasets.push(arr);
+      this.chartData.labels.push("Battery")
+      this.chartData.datasets.push(data);
       console.log(this.chartData)
 
     }
   },
   async mounted() {
 
-    if (this.methodName === 'deviceDough') {
-      this.deviceDough();
-    }
+    this.responseData = await makeGetRequest(this.identity);
+
+    let data = {
+      'backgroundColor': ["#41B883", "#FD0707FF"],
+      'data': [this.responseData[1].batteryLevel, (100 - this.responseData[1].batteryLevel)]
+    };
+    this.chartData.labels.push("Battery")
+    this.chartData.datasets.push(data);
+    console.log(this.chartData)
     this.loaded = true;
   }
 }

@@ -33,12 +33,40 @@
 
     <div class="row m-5">
 
+
       <div class="col-md-4 mt-3 mb-3">
         <div>
           <b-card no-body class="overflow-hidden" style="max-width: 540px;">
             <b-row no-gutters>
               <b-col md="6">
-                <img src="../assets/body.gif" alt="Image" class="rounded-0" height="240" width="240" />
+                <img src="../assets/soccer.png" alt="Image" class="rounded-0" height="240" width="240"/>
+              </b-col>
+              <b-col md="6">
+                <b-card-body title="Body">
+                  <b-card-text>
+                    <p>
+                      The Activity endpoints are used to query and/or modify a Fitbit user's daily activity data.
+                    </p>
+                    <button class="btn btn-primary">
+                      <router-link class="fb-card" style="color:white;text-decoration: none;" to="/body">
+                        Body
+                      </router-link>
+                    </button>
+                  </b-card-text>
+                </b-card-body>
+              </b-col>
+            </b-row>
+          </b-card>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 mt-3 mb-3">
+        <div>
+          <b-card no-body class="overflow-hidden" style="max-width: 540px;">
+            <b-row no-gutters>
+              <b-col md="6">
+                <img src="../assets/body.gif" alt="Image" class="rounded-0" height="240" width="240"/>
               </b-col>
               <b-col md="6">
                 <b-card-body title="Body">
@@ -64,7 +92,7 @@
           <b-card no-body class="overflow-hidden" style="max-width: 540px;">
             <b-row no-gutters>
               <b-col md="6">
-                <img src="../assets/device2.jpg" alt="Image" class="rounded-0" height="250" width="250" />
+                <img src="../assets/device2.jpg" alt="Image" class="rounded-0" height="250" width="250"/>
               </b-col>
               <b-col md="6">
                 <b-card-body title="Devices">
@@ -90,7 +118,7 @@
           <b-card no-body class="overflow-hidden" style="max-width: 540px;">
             <b-row no-gutters>
               <b-col md="6">
-                <img src="../assets/heart.jpg" alt="Image" class="rounded-0" height="250" />
+                <img src="../assets/heart.jpg" alt="Image" class="rounded-0" height="250"/>
               </b-col>
               <b-col md="6">
                 <b-card-body title="Heart Rate">
@@ -116,7 +144,7 @@
           <b-card no-body class="overflow-hidden" style="max-width: 540px;">
             <b-row no-gutters>
               <b-col md="6">
-                <img src="../assets/sleep.jpg" alt="Image" class="rounded-0" height="260" width="260" />
+                <img src="../assets/sleep.jpg" alt="Image" class="rounded-0" height="260" width="260"/>
               </b-col>
               <b-col md="6">
                 <b-card-body title="Sleep">
@@ -142,13 +170,14 @@
           <b-card no-body class="overflow-hidden" style="max-width: 540px;">
             <b-row no-gutters>
               <b-col md="6">
-                <img src="../assets/user.png" alt="Image" class="rounded-0" height="240" width="240" />
+                <img src="../assets/user.png" alt="Image" class="rounded-0" height="240" width="240"/>
               </b-col>
               <b-col md="6">
                 <b-card-body title="User">
                   <b-card-text>
                     <p>
-                      The User endpoints display information about the user's profile information and their badges collected.
+                      The User endpoints display information about the user's profile information and their badges
+                      collected.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
                       <router-link class="fb-card" style="text-decoration: none;" to="/user">

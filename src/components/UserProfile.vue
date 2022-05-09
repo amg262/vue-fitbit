@@ -42,24 +42,24 @@
           <strong>Date: </strong>{{ badge.dateTime }}<br>
           <strong>Times Achieved: </strong>{{ badge.timesAchieved }}<br>
 
-          <!--          <div class="col-md-3">-->
-          <!--            <img :src="user2.topBadges[0].image300px" alt="alt"/>-->
+                    <div class="col-md-3">
+                      <img :src="user2.topBadges[0].image300px" alt="alt"/>
 
-          <!--            <p>{{ user2.topBadges[0].name }}</p>-->
-          <!--            <strong>Name: </strong>{{ user2.topBadges[0].dateTime }}<br>-->
+                      <p>{{ user2.topBadges[0].name }}</p>
+                      <strong>Name: </strong>{{ user2.topBadges[0].dateTime }}<br>
 
-          <!--            <strong>Date: </strong>{{ user2.topBadges[0].dateTime }}<br>-->
-          <!--            <strong>Times Achieved: </strong>{{ user2.topBadges[0].timeAchieved }}<br>-->
-          <!--          </div>-->
-          <!--          <div class="col-md-3">-->
+                      <strong>Date: </strong>{{ user2.topBadges[0].dateTime }}<br>
+                      <strong>Times Achieved: </strong>{{ user2.topBadges[0].timeAchieved }}<br>
+                    </div>
+                    <div class="col-md-3">
 
-          <!--          </div>-->
-          <!--          <div class="col-md-3">-->
+                    </div>
+                    <div class="col-md-3">
 
-          <!--          </div>-->
-          <!--          <div class="col-md-3">-->
+                    </div>
+                    <div class="col-md-3">
 
-          <!--          </div>-->
+                    </div>
         </div>
       </div>
 

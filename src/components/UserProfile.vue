@@ -22,7 +22,7 @@
 
 
       <div class="col-md-4">
-        <h4 style="text-align: center" class="mb-4">Battery Level</h4>
+        <h4 @click="update" style="text-align: center" class="mb-4">Battery Level</h4>
         <Doughnut
             identity="https://api.fitbit.com/1/user/-/devices.json"
             method-name="deviceDough"
@@ -42,24 +42,6 @@
           <strong>Date: </strong>{{ badge.dateTime }}<br>
           <strong>Times Achieved: </strong>{{ badge.timesAchieved }}<br>
 
-                    <div class="col-md-3">
-                      <img :src="user2.topBadges[0].image300px" alt="alt"/>
-
-                      <p>{{ user2.topBadges[0].name }}</p>
-                      <strong>Name: </strong>{{ user2.topBadges[0].dateTime }}<br>
-
-                      <strong>Date: </strong>{{ user2.topBadges[0].dateTime }}<br>
-                      <strong>Times Achieved: </strong>{{ user2.topBadges[0].timeAchieved }}<br>
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
-                    <div class="col-md-3">
-
-                    </div>
         </div>
       </div>
 
@@ -135,6 +117,7 @@ export default {
       // var date = new Date(this.user3.lastSyncTime);
       var sub = s.slice(0, -32);
       console.log(sub);
+
     },
 
     update() {
@@ -145,8 +128,7 @@ export default {
 
     // console.log(json)
 
-
-
+    this.doThis1();
 
     //this.user2.age =
 

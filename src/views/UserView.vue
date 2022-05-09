@@ -10,7 +10,8 @@
 
     </div>
     <div class="row">
-        <UserProfile></UserProfile>
+      <button class="btn btn-primary" >hey</button>
+        <UserProfile @update-data="popup"></UserProfile>
     </div>
   </div>
 
@@ -28,11 +29,15 @@ export default {
 
   },
   methods: {
-
+    popup() {
+      alert('hey');
+    }
   },
   data() {
     return {}
   },
+
+
 
   async mounted() {
 

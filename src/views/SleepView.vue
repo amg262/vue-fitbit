@@ -14,8 +14,8 @@
     </div>
 
     <BarChart
-        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
-        chart-label="Ten Day Sleep Log"
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=50"
+        chart-label="50 Day Sleep Log"
         chart-background="#008CFFFF"
         method-name="sleepBar"
     >
@@ -29,8 +29,8 @@
     <!--    </BarChart>-->
     <!--    <br/>-->
     <LineChartGenerator
-        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
-        chart-label="Ten Day Sleep Log"
+        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
+        chart-label="25 Day Sleep Log"
         chart-background="#ff7c00"
         method-name="sleepLine"
     >
@@ -47,8 +47,8 @@
 
       <b-col>
         <PolarChart
-            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
-            chart-label="Ten Day Sleep Log"
+            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=5"
+            chart-label="5 Day Sleep Efficiency"
             chart-background="#008CFFFF"
             method-name="sleepPolar"
         >
@@ -57,8 +57,8 @@
       <br/>
       <b-col>
         <RadarChart
-            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
-            chart-label="Ten Day Sleep Log"
+            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
+            chart-label="25 Day Sleep Analysis"
             chart-background="#008CFFFF"
             method-name="sleepRadar"
         >
@@ -84,16 +84,7 @@
     <!--    >-->
     <!--    </Doughnut>-->
 
-    <div class="row">
-      <div class="col-md-4">alskdfjaskjdf</div>
-      <div class="col-md-4">alskdfjaskjdf</div>
-      <div class="col-md-4">alskdfjaskjdf</div>
-    </div>
-    <br/><br/>
-    <div class="row">
-      <div class="col-md-6">alskdfjaskjdf</div>
-      <div class="col-md-6">alskdfjaskjdf</div>
-    </div>
+
 
 </div>
 

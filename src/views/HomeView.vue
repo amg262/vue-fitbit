@@ -16,6 +16,8 @@
       <!--    </PieChart>-->
     </div>
     <div class="row">
+      <InputForm @change="$"></InputForm>
+
       <div class="col"></div>
       <div class="col-md-6" style="text-align: justify;">
         <h1 style="text-align: center;">Vue Fitbit</h1>
@@ -202,10 +204,11 @@
 // @ is an alias to /src
 
 // import PieChart from "@/components/Pie";
-
+import InputForm from "@/components/InputForm";
 export default {
   name: 'HomeView',
   components: {
+    InputForm
     // PieChart
   }
 }

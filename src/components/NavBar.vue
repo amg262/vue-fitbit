@@ -16,16 +16,16 @@
           <b-nav-item>
             <router-link to="/activity">Activity</router-link>
           </b-nav-item>
-          <b-nav-item>
-            <router-link to="/about">About</router-link>
-          </b-nav-item>
+<!--          <b-nav-item>-->
+<!--            <router-link to="/about">About</router-link>-->
+<!--          </b-nav-item>-->
 
           <b-nav-item>
             <router-link to="/body">Body</router-link>
           </b-nav-item>
-          <b-nav-item>
-            <router-link to="/devices">Devices</router-link>
-          </b-nav-item>
+<!--          <b-nav-item>-->
+<!--            <router-link to="/devices">Devices</router-link>-->
+<!--          </b-nav-item>-->
           <b-nav-item>
             <router-link to="/heart-rate">Heart Rate</router-link>
           </b-nav-item>

@@ -1,16 +1,27 @@
 <template>
-  <div class="row">
-    <Doughnut
-        identity="https://api.fitbit.com/1/user/-/devices.json"
-        method-name="deviceDough"
-    >
-
-    </Doughnut>
+  <div>
+    <div class="row">
+      <div class="col-md-6">
+        <Doughnut
+            identity="https://api.fitbit.com/1/user/-/devices.json"
+            method-name="deviceDough"
+        >
+        </Doughnut>
+      </div>
+      <div class="col-md-6">
+        <Pie
+            identity="https://api.fitbit.com/1/user/-/devices.json"
+            method-name="deviceDough"
+        >
+        </Pie>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Doughnut from "@/components/Doughnut";
+import Pie from "@/components/Pie";
 import '../models/ApiRequest'
 import {makeGetRequest} from "@/models/ApiRequest";
 
@@ -25,7 +36,7 @@ export default {
       type: String,
     }
   },
-  components: {Doughnut},
+  components: {Doughnut, Pie},
   methods: {
 
     doThis1() {

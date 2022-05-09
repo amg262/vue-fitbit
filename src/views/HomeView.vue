@@ -42,14 +42,14 @@
                 <img src="../assets/soccer.png" alt="Image" class="rounded-0" height="240" width="240"/>
               </b-col>
               <b-col md="6">
-                <b-card-body title="Body">
+                <b-card-body title="Activity">
                   <b-card-text>
                     <p>
                       The Activity endpoints are used to query and/or modify a Fitbit user's daily activity data.
                     </p>
-                    <button class="btn btn-primary">
-                      <router-link class="fb-card" style="color:white;text-decoration: none;" to="/body">
-                        Body
+                    <button class="card-btn btn btn-outline-primary">
+                      <router-link class="fb-card fb-btn" to="/body">
+                        Activity
                       </router-link>
                     </button>
                   </b-card-text>
@@ -74,8 +74,8 @@
                     <p>
                       The Body endpoints are used for querying and modifying the user's body fat and weight data.
                     </p>
-                    <button class="btn btn-primary">
-                      <router-link class="fb-card" style="color:white;text-decoration: none;" to="/body">
+                    <button class="card-btn btn btn-outline-primary">
+                      <router-link class="fb-card fb-btn"   to="/body">
                         Body
                       </router-link>
                     </button>
@@ -100,8 +100,8 @@
                     <p>
                       The Devices endpoints displays information about the devices paired to a user's account.
                     </p>
-                    <button class="btn btn-primary">
-                      <router-link class="fb-card" style="color:white;text-decoration: none;" to="/devices">
+                    <button class="card-btn btn btn-outline-primary">
+                      <router-link class="fb-card fb-btn"   to="/devices">
                         Devices
                       </router-link>
                     </button>
@@ -127,7 +127,7 @@
                       The Heart Rate Time Series endpoints are used for querying the user's heart rate data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card" style="text-decoration: none;" to="/devices">
+                      <router-link class="fb-card fb-btn"  to="/devices">
                         Heart Rate
                       </router-link>
                     </button>
@@ -153,7 +153,7 @@
                       The Sleep endpoints are used for querying and modifying the sleep data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card" style="text-decoration: none;" to="/sleep">
+                      <router-link class="fb-card fb-btn"  to="/sleep">
                         Sleep
                       </router-link>
                     </button>
@@ -180,7 +180,7 @@
                       collected.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card" style="text-decoration: none;" to="/user">
+                      <router-link class="fb-card fb-btn"  to="/user">
                         User
                       </router-link>
                     </button>

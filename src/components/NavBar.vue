@@ -36,6 +36,7 @@
             <router-link to="/user">User</router-link>
           </b-nav-item>
 
+
         </b-navbar-nav>
         <!-- Right aligned nav items -->
 <!--        <b-navbar-nav class="ml-auto">-->
@@ -58,7 +59,10 @@
 <!--          </b-nav-item-dropdown>-->
 <!--        </b-navbar-nav>-->
       </b-collapse>
+      <button class="btn btn-outline-info m-2" style="">Update Data</button>
+
     </b-navbar>
+
   </div>
 </template>
 

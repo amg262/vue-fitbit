@@ -203,7 +203,7 @@ export default {
 
         // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
         this.chartData.datasets[0].data.push(sleep.value)
-   
+
       })
 
       this.loaded = true;

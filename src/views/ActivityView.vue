@@ -5,7 +5,7 @@
 
 
       <!--    <BarChart-->
-      <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
+      <!--        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
       <!--        chart-label="Ten Day Sleep Log"-->
       <!--        chart-background="#008CFFFF"-->
       <!--        method-name="sleepBar"-->
@@ -13,14 +13,14 @@
       <!--    </BarChart>-->
       <!--&lt;!&ndash;    <br/>&ndash;&gt;-->
       <!--&lt;!&ndash;    <BarChart&ndash;&gt;-->
-      <!--&lt;!&ndash;        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"&ndash;&gt;-->
+      <!--&lt;!&ndash;        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"&ndash;&gt;-->
       <!--&lt;!&ndash;        chart-label="100 Day Sleep Log"&ndash;&gt;-->
       <!--&lt;!&ndash;        chart-background="#008CCEF"&ndash;&gt;-->
       <!--&lt;!&ndash;    >&ndash;&gt;-->
       <!--&lt;!&ndash;    </BarChart>&ndash;&gt;-->
       <!--&lt;!&ndash;    <br/>&ndash;&gt;-->
       <!--    <LineChartGenerator-->
-      <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
+      <!--        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
       <!--        chart-label="Ten Day Sleep Log"-->
       <!--        chart-background="#ff7c00"-->
       <!--        method-name="sleepLine"-->
@@ -28,7 +28,7 @@
       <!--    </LineChartGenerator>-->
       <!--&lt;!&ndash;    <br/>&ndash;&gt;-->
       <!--&lt;!&ndash;    <LineChartGenerator&ndash;&gt;-->
-      <!--&lt;!&ndash;        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"&ndash;&gt;-->
+      <!--&lt;!&ndash;        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=100"&ndash;&gt;-->
       <!--&lt;!&ndash;        chart-label="100 Day Sleep Log"&ndash;&gt;-->
       <!--&lt;!&ndash;        chart-background="#008CFFFF"&ndash;&gt;-->
       <!--&lt;!&ndash;    >&ndash;&gt;-->
@@ -38,7 +38,7 @@
 
       <!--      <div class="col-md-6">-->
       <!--        <PolarChart-->
-      <!--            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"-->
+      <!--            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"-->
       <!--            chart-label="Ten Day Sleep Log"-->
       <!--            chart-background="#008CFFFF"-->
       <!--            method-name="sleepPolar"-->
@@ -48,7 +48,7 @@
       <!--      <br/>-->
       <!--      <div class="col-md-6">-->
       <!--        <RadarChart-->
-      <!--            identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
+      <!--            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"-->
       <!--            chart-label="Ten Day Sleep Log"-->
       <!--            chart-background="#008CFFFF"-->
       <!--            method-name="sleepRadar"-->
@@ -60,7 +60,7 @@
       <!--    <br/>-->
       <!--    <br/>-->
       <!--    <Scatter-->
-      <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"-->
+      <!--        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"-->
       <!--        chart-label="Ten Day Sleep Log"-->
       <!--        chart-background="#008CFFFF"-->
       <!--    >-->
@@ -69,7 +69,7 @@
 
 
       <!--    <Doughnut-->
-      <!--        identity="https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=20"-->
+      <!--        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=20"-->
       <!--        chart-label="Ten Day Sleep Log"-->
       <!--        chart-background="#008CFFFF"-->
       <!--    >-->

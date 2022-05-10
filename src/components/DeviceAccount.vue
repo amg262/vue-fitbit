@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col-md-6">
         <Doughnut
-            identity="https://api.fitbit.com/1/user/-/devices.json"
+            identity="https://api.fitbit.com/1/user/943HNF/devices.json"
             method-name="deviceDough"
         >
         </Doughnut>
       </div>
       <div class="col-md-6">
         <Pie
-            identity="https://api.fitbit.com/1/user/-/devices.json"
+            identity="https://api.fitbit.com/1/user/943HNF/devices.json"
             method-name="deviceDough"
         >
         </Pie>
@@ -54,7 +54,7 @@ export default {
 
     // console.log(json)
 
-    let v = await makeGetRequest("https://api.fitbit.com/1/user/-/profile.json");
+    let v = await makeGetRequest("https://api.fitbit.com/1/user/943HNF/profile.json");
     console.log(v.user);
     //this.user2.avatar150 = v.user.avatar150;
     this.user2 = v.user;

@@ -12,6 +12,7 @@
       v-if="loaded"
       :identity="identity"
       :method-name="methodName"
+      :object="user2"
   />
 </template>
 
@@ -80,6 +81,7 @@ export default {
     return {
       loaded: false,
       responseData: {},
+      user2: {},
       chartData: {
         labels: [],
         datasets: [

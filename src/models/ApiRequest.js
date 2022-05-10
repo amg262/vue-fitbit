@@ -3,7 +3,7 @@ import axios from "axios";
 const json = {
     // THIS IS COMMENTED OUT JUST TO SHOW IF I NEED TO USE THIS USER id SHIT
     // 'sleepList': 'https://api.fitbit.com/1.2/user/' + process.env.VUE_APP_FITBIT_USER_ID + '/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
-    'sleepList': 'https://api.fitbit.com/1.2/user/-/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
+    'sleepList': 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
 }
 
 const conf = {

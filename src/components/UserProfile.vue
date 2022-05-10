@@ -24,7 +24,7 @@
       <div class="col-md-4">
         <h4 @click="update" style="text-align: center" class="mb-4">Battery Level</h4>
         <Doughnut
-            identity="https://api.fitbit.com/1/user/-/devices.json"
+            identity="https://api.fitbit.com/1/user/943HNF/devices.json"
             method-name="deviceDough"
         >
 
@@ -105,8 +105,8 @@ export default {
   methods: {
 
     async doThis1() {
-      let v = await makeGetRequest("https://api.fitbit.com/1/user/-/profile.json");
-      let b = await makeGetRequest("https://api.fitbit.com/1/user/-/devices.json");
+      let v = await makeGetRequest("https://api.fitbit.com/1/user/943HNF/profile.json");
+      let b = await makeGetRequest("https://api.fitbit.com/1/user/943HNF/devices.json");
       // console.log(v.user);
       console.log(b);
       //this.user2.avatar150 = v.user.avatar150;

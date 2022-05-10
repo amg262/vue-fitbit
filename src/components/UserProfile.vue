@@ -22,7 +22,7 @@
 
 
       <div class="col-md-4">
-        <h4 @click="update" style="text-align: center" class="mb-4">Battery Level</h4>
+        <h4 @click="update('bogus')" style="text-align: center" class="mb-4">Battery Level</h4>
         <Doughnut
             identity="https://api.fitbit.com/1/user/943HNF/devices.json"
             method-name="deviceDough"
@@ -120,8 +120,8 @@ export default {
 
     },
 
-    update() {
-      this.$emit('update-data')
+    update(bogus) {
+      this.$emit('update-data', bogus)
     }
   },
   async mounted() {

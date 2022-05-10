@@ -7,10 +7,10 @@
       <div class="col-md-3">
         <b-form>
           <b-form>
-            <b-form-datepicker id="dp"></b-form-datepicker>
-            <b-form-datepicker id="dp2"></b-form-datepicker>
+            <b-form-datepicker :id="date1.toString()" :key="date1"></b-form-datepicker>
+            <b-form-datepicker :id="date2.toString()" :key="date2"></b-form-datepicker>
             <br>
-            <b-button>Update</b-button>
+            <b-button @click="update(date1, date2)">Update</b-button>
           </b-form>
         </b-form>
       </div>
@@ -36,8 +36,9 @@ export default {
     }
   },
   methods: {
-    update() {
-
+    update: function(date1, date2) {
+      console.log(date1, date2)
+      this.$emit('date-picked', date1, date2)
     }
   }
 }

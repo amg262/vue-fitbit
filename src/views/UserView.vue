@@ -10,7 +10,7 @@
 
     </div>
     <div class="row">
-      <button class="btn btn-primary" >hey</button>
+
         <UserProfile @update-data="popup"></UserProfile>
     </div>
   </div>

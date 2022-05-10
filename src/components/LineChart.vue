@@ -142,12 +142,29 @@ export default {
       })
 
       this.loaded = true;
+    },
+    async heartLine() {
+      console.log(this.identity)
+      console.log(json)
+      this.requestData = await makeGetRequest(this.identity);
+      console.log(this.requestData);
+      this.requestData['activities-heart'].forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateTime)
+        this.chartData.datasets[0].data.push(sleep.value.restingHeartRate)
+      })
+
+      this.loaded = true;
     }
   },
   async mounted() {
 
     if (this.methodName ==='sleepLine') {
       this.sleepLine();
+    } else if (this.methodName === 'heartLine') {
+      this.heartLine();
     }
   }
 }

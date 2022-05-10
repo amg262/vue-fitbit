@@ -199,9 +199,9 @@ export default {
       this.chartData.labels.push(sleep.dateOfSleep)
 
       // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
-      this.chartData.datasets[0].data.push(sleep.minutesAsleep / 60)
-      this.chartData.datasets[1].data.push(sleep.efficiency / 10)
-      this.chartData.datasets[2].data.push(sleep.minutesAwake / 60)
+      this.chartData.datasets[0].data.push([sleep.minutesAsleep / 60])
+      this.chartData.datasets[1].data.push([sleep.efficiency / 10])
+      this.chartData.datasets[2].data.push([sleep.minutesAwake / 60])
       this.chartData.datasets[3].data.push(sleep.timeInBed / 60)
     })
 

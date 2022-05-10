@@ -33,6 +33,10 @@
         chart-label="25 Day Sleep Log"
         chart-background="#ff7c00"
         method-name="sleepLine"
+        border-color="#4BC0C0FF"
+        tension="0.5"
+
+
     >
     </LineChartGenerator>
     <!--    <br/>-->

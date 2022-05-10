@@ -186,11 +186,35 @@ export default {
 
       this.loaded = true;
     },
+    async activityRadar1() {
+      console.log(this.identity)
+
+      this.requestData = await makeGetRequest(this.identity);
+
+      console.log(this.requestData)
+
+      this.requestData['activities-steps'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateTime)
+
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[0].data.push(sleep.value)
+   
+      })
+
+      this.loaded = true;
+    },
   },
   async mounted() {
 
     if (this.methodName === 'sleepRadar') {
       this.sleepRadar()
+    } else if (this.methodName === 'activityRadar1') {
+      this.activityRadar1()
     }
 
   }

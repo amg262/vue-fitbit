@@ -12,6 +12,7 @@
       v-if="loaded"
       :identity="identity"
       :methodName="methodName"
+      :tension="tension"
   />
 </template>
 
@@ -51,6 +52,15 @@ export default {
     },
     methodName: {
       type: String,
+    },
+    tension: {
+      type:String
+    },
+    borderColor:{
+      type:String
+    },
+    fill: {
+      type: String
     },
 
     chartId: {
@@ -117,7 +127,10 @@ export default {
           {
             label: this.chartLabel,
             backgroundColor: this.chartBackground,
-            data: []
+            data: [],
+            fill: false,
+            borderColor: '#4BC0C0FF',
+            tension: 0.5
           }
         ]
       },
@@ -134,6 +147,9 @@ export default {
       this.requestData = await makeGetRequest(this.identity);
 
       this.requestData.sleep.forEach(sleep => {
+        this.chartData.datasets.fill = this.fill
+        this.chartData.datasets.borderColor = this.borderColor;
+        this.chartData.datasets.tension = this.tension;
 
         // eslint-disable-next-line vue/no-mutating-props
         // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
@@ -149,6 +165,10 @@ export default {
       this.requestData = await makeGetRequest(this.identity);
       console.log(this.requestData);
       this.requestData['activities-heart'].forEach(sleep => {
+
+        this.chartData.datasets.fill = this.fill
+        this.chartData.datasets.borderColor = this.borderColor;
+        this.chartData.datasets.tension = this.tension;
 
         // eslint-disable-next-line vue/no-mutating-props
         // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));

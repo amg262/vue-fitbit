@@ -23,7 +23,7 @@
 import {Radar} from 'vue-chartjs/legacy'
 
 import {Chart as ChartJS, Legend, LineElement, PointElement, RadialLinearScale, Title, Tooltip} from 'chart.js'
-import {json, makeGetRequest} from "@/models/ApiRequest";
+import {makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(
     Title,
@@ -79,11 +79,11 @@ export default {
     },
     width: {
       type: Number,
-      default: 800
+      default: 700
     },
     height: {
       type: Number,
-      default: 800
+      default: 700
     },
     cssClasses: {
       default: '',
@@ -179,9 +179,68 @@ export default {
     }
   },
   methods: {
+    async hrRadar() {
+
+      this.requestData = await makeGetRequest(this.identity);
+
+      this.chartData.datasets[0].label.push("Sedentary")
+      this.chartData.datasets[1].label.push("Lightly Active")
+      this.chartData.datasets[2].label.push("Faily Active")
+      this.chartData.datasets[3].label.push("Very Active")
+
+      this.requestData['activities-heart'].forEach(sleep => {
+        this.chartData.labels.push(sleep.dateTime)
+
+        console.log("heart 1",sleep)
+        sleep['value'].forEach(sleep2 => {
+          this.chartData.labels.push(sleep.dateTime)
+          console.log("heart 2",sleep2)
+
+          // this.requestData.sleep.forEach(sleep => {
+
+          // eslint-disable-next-line vue/no-mutating-props
+          // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+          // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+          this.chartData.datasets[0].data.push(sleep2.caloriesOut)
+          this.chartData.datasets[0].label.push(sleep2.name)
+        })
+      })
+
+
+      this.loaded = true;
+    },
+    async sleepRadar2() {
+
+      this.requestData = await makeGetRequest(this.identity);
+      this.chartData.datasets[0].label.push("Hours while Asleep")
+      this.chartData.datasets[1].label.push("Efficiency Score")
+      this.chartData.datasets[2].label.push("Hours spent awake")
+      this.chartData.datasets[3].label.push("Total time in bed")
+
+      this.requestData.sleep.forEach(sleep => {
+        this.chartData.labels.push(sleep.dateOfSleep)
+        // noinspection JSDeprecatedSymbols
+        this.requestData['sleep'].levels.summary.forEach(sleep2 => {
+
+          // eslint-disable-next-line vue/no-mutating-props
+          // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+
+          // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+
+
+          this.chartData.datasets[0].data.push(sleep2.deep.minutes / 60)
+          this.chartData.datasets[1].data.push(sleep2.light.minutes / 60)
+          this.chartData.datasets[2].data.push(sleep2.rem.minutes / 60)
+          this.chartData.datasets[3].data.push(sleep2.wake.minutes / 60)
+        })
+      })
+
+      this.loaded = true;
+    },
     async sleepRadar() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
       this.chartData.datasets[0].label.push("Hours while Asleep")
       this.chartData.datasets[1].label.push("Efficiency Score")
@@ -195,7 +254,6 @@ export default {
         this.chartData.labels.push(sleep.dateOfSleep)
 
         // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
-
 
 
         this.chartData.datasets[0].data.push(sleep.minutesAsleep / 60)
@@ -214,7 +272,7 @@ export default {
       this.requestData4 = await makeGetRequest(this.identity4);
 
 
-     // console.log(this.requestData)
+      // console.log(this.requestData)
       console.log(this.requestData2['activities-minutesLightlyActive'])
 
       this.chartData.datasets[0].label.push("Sedentary")
@@ -281,10 +339,6 @@ export default {
       this.requestData4 = await makeGetRequest(this.identity4);
 
 
-      // console.log(this.requestData)
-      console.log(this.requestData2['activities-minutesLightlyActive'])
-
-
       this.requestData['activities-steps'].forEach(sleep => {
         this.chartData.labels.push(sleep.dateTime)
 
@@ -331,6 +385,10 @@ export default {
       this.sleepRadar()
     } else if (this.methodName === 'activityRadar1') {
       this.activityRadar1()
+    } else if (this.methodName === 'sleepRadar2') {
+      this.sleepRadar2()
+    } else if (this.methodName === 'hrRadar') {
+      this.hrRadar()
     }
 
   }

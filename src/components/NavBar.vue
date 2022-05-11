@@ -59,8 +59,9 @@
 <!--          </b-nav-item-dropdown>-->
 <!--        </b-navbar-nav>-->
       </b-collapse>
-      <button class="btn btn-outline-info m-2" id="update-data-btn"  style="">Update Data</button>
+      <b-nav-item>
 
+      </b-nav-item>
     </b-navbar>
 
   </div>

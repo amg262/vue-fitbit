@@ -110,7 +110,6 @@ export default {
 
      this.responseData = await makeGetRequest(this.identity);
 
-    console.log(this.responseData)
 
     let data = {
       'backgroundColor': ["#41B883", "#FD0707FF"],
@@ -118,7 +117,6 @@ export default {
     };
     this.chartData.labels.push("Battery")
     this.chartData.datasets.push(data);
-    console.log(this.chartData)
 
       this.deviceDough();
 

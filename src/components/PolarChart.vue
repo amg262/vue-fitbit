@@ -19,7 +19,7 @@
 import {PolarArea} from 'vue-chartjs/legacy'
 
 import {ArcElement, Chart as ChartJS, Legend, RadialLinearScale, Title, Tooltip} from 'chart.js'
-import {json, makeGetRequest} from "@/models/ApiRequest";
+import {makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(Title, Tooltip, Legend, ArcElement, RadialLinearScale)
 
@@ -127,12 +127,13 @@ export default {
     // }
       requestData: {},
       loaded: false,
+      chartBackground2: "#00E1FFFF",
       chartData: {
         labels: [],
         datasets: [
           {
             label:[],
-            backgroundColor: "#ff0000",
+            backgroundColor: "#00e1ff",
             data: []
           },
 
@@ -141,7 +142,11 @@ export default {
             backgroundColor: "#ffc107",
             data:[],
           },
-
+          {
+            label: [],
+            backgroundColor: "#ffc107",
+            data:[],
+          },
         ]
       },
       chartOptions: {
@@ -153,11 +158,13 @@ export default {
 
   methods: {
     async sleepPolar() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
-      this.chartData.labels.push("Duration")
-      this.chartData.labels.push("Efficiency")
+      // this.chartData.labels.push("Duration")
+      // this.chartData.labels.push("Efficiency")
+      this.chartData.labels.push("Awakenings")
+      this.chartData.labels.push("Awakenings")
+
       this.requestData.sleep.forEach(sleep => {
 
         // eslint-disable-next-line vue/no-mutating-props
@@ -166,19 +173,62 @@ export default {
 
         // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
 
-        this.chartData.datasets[0].data.push(sleep.duration / 3600000)
-        this.chartData.datasets[1].data.push(sleep.efficiency/ 10)
+        // this.chartData.datasets[0].data.push(sleep.duration / 3600000)
+        // this.chartData.datasets[1].data.push(sleep.efficiency/ 10)
+        this.chartData.datasets[0].data.push(sleep.awakeningsCount)
+        this.chartData.datasets[0].backgroundColor = this.chartBackground2
+
+
+
+
       })
 
       this.loaded = true;
-    }
+    },
+    async weightPolar() {
+
+      this.requestData = await makeGetRequest(this.identity);
+
+      console.log(this.requestData)
+
+      this.chartData.labels.push("BMI")
+      this.chartData.labels.push("Fat")
+      this.chartData.labels.push("Weight")
+
+      this.requestData.weight.forEach(sleep => {
+
+
+        console.log(parseInt( sleep.fat))
+
+        var st =parseInt( sleep.fat)
+        var s = st.toString();
+        console.log(s)
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+
+        this.chartData.datasets[0].data.push(sleep.bmi)
+
+        this.chartData.datasets[2].data.push(sleep.weight)
+        this.chartData.datasets[0].label.push("BMI")
+
+        this.chartData.datasets[2].label.push("Weight")
+      })
+
+      this.loaded = true;
+    },
   },
+
+
   async mounted() {
 
     if (this.methodName === 'sleepPolar') {
       this.sleepPolar();
     }
-
+    this.weightPolar();
   }
 
 }

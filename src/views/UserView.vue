@@ -1,7 +1,7 @@
 <template>
   <div class="row fb-page body">
     <div class="fb-user-bio offset-2 col-md-8">
-    <h1 class="fb-heading">This is an user page</h1>
+    <h1 class="fb-heading">User</h1>
     <p>
       The User endpoints display information about the user's profile information, the regional locale & language settings, and their badges collected.
     </p>

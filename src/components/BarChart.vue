@@ -21,7 +21,7 @@ import {Bar} from 'vue-chartjs/legacy'
 import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip} from 'chart.js'
 // import axios from "axios";
 import '../models/ApiRequest'
-import {json, makeGetRequest} from "@/models/ApiRequest";
+import { makeGetRequest} from "@/models/ApiRequest";
 
 import annotationPlugin from 'chartjs-plugin-annotation';
 
@@ -65,11 +65,11 @@ export default {
     },
     width: {
       type: Number,
-      default: 400
+      default: 650
     },
     height: {
       type: Number,
-      default: 400
+      default: 600
     },
     cssClasses: {
       default: '',
@@ -87,8 +87,7 @@ export default {
   },
   methods: {
     async sleepBar() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
 
       this.requestData.sleep.forEach(sleep => {

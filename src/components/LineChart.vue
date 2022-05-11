@@ -21,7 +21,7 @@
 import {Line as LineChartGenerator} from 'vue-chartjs/legacy'
 
 import {CategoryScale, Chart as ChartJS, Legend, LinearScale, LineElement, PointElement, Title, Tooltip} from 'chart.js'
-import {json, makeGetRequest} from "@/models/ApiRequest";
+import { makeGetRequest} from "@/models/ApiRequest";
 
 ChartJS.register(
     Title,
@@ -78,7 +78,7 @@ export default {
     },
     height: {
       type: Number,
-      default: 400
+      default: 600
     },
     cssClasses: {
       default: '',
@@ -143,8 +143,7 @@ export default {
   },
   methods: {
     async sleepLine() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
 
       this.requestData.sleep.forEach(sleep => {
@@ -161,10 +160,8 @@ export default {
       this.loaded = true;
     },
     async actLine() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
-      console.log(this.requestData);
       this.requestData['activities-distance'].forEach(sleep => {
 
         this.chartData.datasets.fill = this.fill
@@ -180,10 +177,8 @@ export default {
       this.loaded = true;
     },
     async heartLine() {
-      console.log(this.identity)
-      console.log(json)
+
       this.requestData = await makeGetRequest(this.identity);
-      console.log(this.requestData);
       this.requestData['activities-heart'].forEach(sleep => {
 
         this.chartData.datasets.fill = this.fill

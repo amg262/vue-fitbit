@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row fb-page body">
-      <h1 class="fb-heading">This is an Devices page</h1>
+      <h1 class="fb-heading">Devices</h1>
       <p>The Body endpoints are used for querying and modifying the user 's body fat and weight data.</p>
       <p>
         The Devices endpoints displays information about the devices paired to a user's account.

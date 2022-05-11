@@ -109,7 +109,7 @@ export default {
       };
       this.chartData.labels.push("Battery")
       this.chartData.datasets.push(data);
-      console.log(this.chartData)
+
 
     }
   },
@@ -123,7 +123,7 @@ export default {
     };
     this.chartData.labels.push("Battery")
     this.chartData.datasets.push(data);
-    console.log(this.chartData)
+
     this.loaded = true;
   }
 }

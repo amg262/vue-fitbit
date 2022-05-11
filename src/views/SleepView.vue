@@ -1,22 +1,14 @@
 <template>
   <div class="row fb-page body">
-    <h1 class="fb-heading">This is an sleep page</h1>
+    <h1 class="fb-heading">Sleep</h1>
     <p>The Sleep endpoints are used for querying and modifying the sleep data.</p>
-    <p>
-      The endpoints in this section are:
-    </p>
 
-    <div class="col">
-      <h4><a target="_blank" class="fb-no-underline" href="https://dev.fitbit.com/build/reference/web-api/body/">Get Weight Log</a></h4>
-      <p>
-        Retrieves a list of all user's weight log entries for a given date.
-      </p>
-    </div>
+
 
     <BarChart
-        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=50"
+        identity="sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=50"
         chart-label="50 Day Sleep Log"
-        chart-background="#008CFFFF"
+        chart-background="#198754"
         method-name="sleepBar"
     >
     </BarChart>
@@ -29,7 +21,7 @@
     <!--    </BarChart>-->
     <!--    <br/>-->
     <LineChartGenerator
-        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
+        identity="sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
         chart-label="25 Day Sleep Log"
         chart-background="#ff7c00"
         method-name="sleepLine"
@@ -51,7 +43,7 @@
 
       <b-col>
         <PolarChart
-            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=5"
+            identity="sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=5"
             chart-label="5 Day Sleep Efficiency"
             chart-background="#008CFFFF"
             method-name="sleepPolar"
@@ -61,13 +53,21 @@
       <br/>
       <b-col>
         <RadarChart
-            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
+            identity="sleep/list.json?beforeDate=2022-05-10&sort=desc&offset=0&limit=25"
             chart-label="25 Day Sleep Analysis"
-            chart-background="#008CFFFF"
+            chart-background="#00E1FFFF"
             method-name="sleepRadar"
         >
         </RadarChart>
       </b-col>
+
+      <RadarChart
+          identity="sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
+          chart-label="Ten Day Sleep Log"
+          chart-background="#008CFFFF"
+          method-name="sleepRadar"
+      >
+      </RadarChart>
     </b-row>
 
     <!--    <br/>-->

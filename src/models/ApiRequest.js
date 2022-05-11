@@ -60,8 +60,11 @@ async function makeGetRequest(url) {
         url: url,
         headers: {'Bearer': process.env.VUE_APP_FITBIT_API_KEY}
     }
+
+    let urlPrefix = "https://api.fitbit.com/1/user/" + process.env.VUE_APP_FITBIT_USER_ID + "/"
+    let uri = urlPrefix + url;
     //const params = new url.URLSearchParams(payload);
-    let res = await axios(url, conf)
+    let res = await axios(uri, conf)
     // console.log(this, res)
     return res.data;
 }

@@ -16,7 +16,6 @@
       <!--    </PieChart>-->
     </div>
     <div class="row">
-      <InputForm @change="$"></InputForm>
 
       <div class="col"></div>
       <div class="col-md-6" style="text-align: justify;">
@@ -77,7 +76,7 @@
                       The Body endpoints are used for querying and modifying the user's body fat and weight data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn"   to="/body">
+                      <router-link class="fb-card fb-btn" to="/body">
                         Body
                       </router-link>
                     </button>
@@ -103,7 +102,7 @@
                       The Devices endpoints displays information about the devices paired to a user's account.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn"   to="/devices">
+                      <router-link class="fb-card fb-btn" to="/devices">
                         Devices
                       </router-link>
                     </button>
@@ -129,7 +128,7 @@
                       The Heart Rate Time Series endpoints are used for querying the user's heart rate data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn"  to="/devices">
+                      <router-link class="fb-card fb-btn" to="/devices">
                         Heart Rate
                       </router-link>
                     </button>
@@ -155,7 +154,7 @@
                       The Sleep endpoints are used for querying and modifying the sleep data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn"  to="/sleep">
+                      <router-link class="fb-card fb-btn" to="/sleep">
                         Sleep
                       </router-link>
                     </button>
@@ -182,7 +181,7 @@
                       collected.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn"  to="/user">
+                      <router-link class="fb-card fb-btn" to="/user">
                         User
                       </router-link>
                     </button>
@@ -194,6 +193,15 @@
         </div>
       </div>
 
+      <HomeCard
+          src='../assets/user.png'
+          title="User"
+          to="/user"
+
+          pText="The User endpoints display information about the user's profile information and their badges
+
+                      collected."></HomeCard>
+
 
     </div>
 
@@ -204,12 +212,12 @@
 // @ is an alias to /src
 
 // import PieChart from "@/components/Pie";
-import InputForm from "@/components/InputForm";
+import HomeCard from "@/components/HomeCard";
+
 export default {
   name: 'HomeView',
   components: {
-    InputForm
-    // PieChart
+    HomeCard
   }
 }
 </script>

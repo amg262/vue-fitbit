@@ -1,18 +1,9 @@
 <template>
   <div class="row fb-page body">
-    <h1 class="fb-heading">This is an body page</h1>
-    <p>The Body endpoints are used for querying and modifying the user 's body fat and weight data.</p>
-    <p>
-      The endpoints in this section are:
-    </p>
+    <h1 class="fb-heading">Heart Rate</h1>
+    <p>The Heart Rate Time Series endpoints are used for querying the user's heart rate data. </p>
 
-    <div class="col">
-      <h4><a target="_blank" class="fb-no-underline" href="https://dev.fitbit.com/build/reference/web-api/body/">Get
-        Weight Log</a></h4>
-      <p>
-        Retrieves a list of all user's weight log entries for a given date.
-      </p>
-    </div>
+
     <div class="row">
       <div class="col"></div>
 
@@ -21,8 +12,18 @@
     <div class="row">
       <!--      <InputForm @date-picked="popup"></InputForm>-->
 
+      <RadarChart
+          identity="activities/heart/date/2022-05-01/today.json"
+          chart-label="2.5 Month Daily Activity"
+          chart-background="#008CFFFF"
+          method-name="hrRadar"
+
+      >
+
+      </RadarChart>
+
       <LineChartGenerator
-          identity="https://api.fitbit.com/1/user/943HNF/activities/heart/date/2022-01-01/today.json"
+          identity="activities/heart/date/2022-01-01/today.json"
           method-name="heartLine"
           chart-label="Resting Heart Rate for 2022"
           chart-background="#ff7c00"
@@ -34,7 +35,7 @@
       </LineChartGenerator>
 
       <LineChartGenerator
-          identity="https://api.fitbit.com/1/user/943HNF/activities/heart/date/2021-07-01/2021-12-31.json"
+          identity="activities/heart/date/2021-07-01/2021-12-31.json"
           method-name="heartLine"
           chart-label="Resting Heart Rate for 2022"
           chart-background="#ffeb00"
@@ -45,7 +46,7 @@
 
       </LineChartGenerator>
       <LineChartGenerator
-          identity="https://api.fitbit.com/1/user/943HNF/activities/heart/date/2021-01-01/2021-06-30.json"
+          identity="/activities/heart/date/2021-01-01/2021-06-30.json"
           method-name="heartLine"
           chart-label="Resting Heart Rate for 2022"
           chart-background="#dc3545c2"
@@ -72,12 +73,12 @@
 
 import LineChartGenerator from "@/components/LineChart";
 // import InputForm from "@/components/InputForm";
-
+import RadarChart from "@/components/Radar";
 export default {
   name: 'App',
   components: {
 
-    // RadarChart,
+    RadarChart,
     // BarChart,
     LineChartGenerator,
     // InputForm,

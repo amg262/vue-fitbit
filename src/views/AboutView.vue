@@ -17,7 +17,7 @@
 <!--    </BarChart>-->
 <!--    <br/>-->
     <LineChartGenerator
-        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
+        identity="sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
         chart-label="Ten Day Sleep Log"
         chart-background="#ff7c00"
         method-name="sleepLine"
@@ -35,7 +35,7 @@
 
       <div class="col-md-6">
         <PolarChart
-            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
+            identity="sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=5"
             chart-label="Ten Day Sleep Log"
             chart-background="#008CFFFF"
             method-name="sleepPolar"
@@ -45,7 +45,7 @@
       <br/>
       <div class="col-md-6">
         <RadarChart
-            identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
+            identity="sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=25"
             chart-label="Ten Day Sleep Log"
             chart-background="#008CFFFF"
             method-name="sleepRadar"

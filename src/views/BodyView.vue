@@ -1,29 +1,20 @@
 <template>
   <div class="row fb-page body">
-    <h1 class="fb-heading">This is an body page</h1>
+    <h1 class="fb-heading">Body</h1>
     <p>The Body endpoints are used for querying and modifying the user 's body fat and weight data.</p>
     <p>
-      The endpoints in this section are:
+
     </p>
 
-    <div class="col">
-      <h4><a target="_blank" class="fb-no-underline" href="https://dev.fitbit.com/build/reference/web-api/body/">Get Weight Log</a></h4>
-      <p>
-        Retrieves a list of all user's weight log entries for a given date.
-      </p>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">alskdfjaskjdf</div>
-      <div class="col-md-4">alskdfjaskjdf</div>
-      <div class="col-md-4">alskdfjaskjdf</div>
-    </div>
-    <br/><br/>
-    <div class="row">
-      <div class="col-md-6">alskdfjaskjdf</div>
-      <div class="col-md-6">alskdfjaskjdf</div>
-    </div>
 
+    <PolarChart
+        identity="body/log/weight/date/2022-05-11.json"
+        chart-label="Weight Statistics"
+        chart-background="#008CFFFF"
+        method-name="weightPolar"
+    >
+    </PolarChart>
 
     <!--    <BarChart-->
     <!--        identity="https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-05-04&sort=desc&offset=0&limit=10"-->
@@ -105,7 +96,7 @@
 // // import LineChartGenerator from "@/components/LineChart";
 // import LineChartGenerator from "@/components/LineChart";
 // import Doughnut from "@/components/Doughnut";
-// import PolarChart from "@/components/PolarChart";
+import PolarChart from "@/components/PolarChart";
 // // import Radar from "@/components/Radar";
 // import RadarChart from "@/components/Radar";
 // import Scatter from "@/components/Scatter";
@@ -117,7 +108,7 @@ export default {
     // RadarChart,
     // BarChart,
     // LineChartGenerator,
-    // PolarChart,
+    PolarChart,
     //
     // Doughnut,
     // Scatter,

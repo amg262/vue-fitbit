@@ -88,31 +88,6 @@
         </div>
       </div>
 
-      <div class="col-md-4 mt-3 mb-3">
-        <div>
-          <b-card no-body class="overflow-hidden" style="max-width: 540px;">
-            <b-row no-gutters>
-              <b-col md="6">
-                <img src="../assets/device2.jpg" alt="Image" class="rounded-0" height="250" width="250"/>
-              </b-col>
-              <b-col md="6">
-                <b-card-body title="Devices">
-                  <b-card-text>
-                    <p>
-                      The Devices endpoints displays information about the devices paired to a user's account.
-                    </p>
-                    <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn" to="/devices">
-                        Devices
-                      </router-link>
-                    </button>
-                  </b-card-text>
-                </b-card-body>
-              </b-col>
-            </b-row>
-          </b-card>
-        </div>
-      </div>
 
       <div class="col-md-4 mt-3 mb-3">
         <div>
@@ -193,14 +168,14 @@
         </div>
       </div>
 
-      <HomeCard
-          src='../assets/user.png'
-          title="User"
-          to="/user"
+<!--      <HomeCard-->
+<!--          src='../assets/user.png'-->
+<!--          title="User"-->
+<!--          to="/user"-->
 
-          pText="The User endpoints display information about the user's profile information and their badges
+<!--          pText="The User endpoints display information about the user's profile information and their badges-->
 
-                      collected."></HomeCard>
+<!--                      collected."></HomeCard>-->
 
 
     </div>
@@ -212,12 +187,11 @@
 // @ is an alias to /src
 
 // import PieChart from "@/components/Pie";
-import HomeCard from "@/components/HomeCard";
 
 export default {
   name: 'HomeView',
   components: {
-    HomeCard
+
   }
 }
 </script>

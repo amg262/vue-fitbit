@@ -10,16 +10,31 @@
         </p>
       </div>
       <div class="row">
-        <div class="col">
+        <BarChart
+            identity="https://api.fitbit.com/1.2/user/943HNF/activities/steps/date/2022-01-01/today.json"
+            chart-label="Steps Per Day This Year"
+            chart-background="#008CFFFF"
+            method-name="actBar"
+        >
+        </BarChart>
+
           <RadarChart
-              identity="https://api.fitbit.com/1.2/user/943HNF/activities/steps/date/2022-01-01/today.json"
-              chart-label="25 Day Sleep Analysis"
+              identity="https://api.fitbit.com/1.2/user/943HNF/activities/minutesSedentary/date/2022-03-01/today.json"
+              identity2="https://api.fitbit.com/1.2/user/943HNF/activities/minutesLightlyActive/date/2022-03-01/today.json"
+              identity3="https://api.fitbit.com/1.2/user/943HNF/activities/minutesFairlyActive/date/2022-03-01/today.json"
+              identity4="https://api.fitbit.com/1.2/user/943HNF/activities/minutesVeryActive/date/2022-03-01/today.json"
+              chart-label="2.5 Month Daily Activity"
               chart-background="#008CFFFF"
               method-name="activityRadar1"
-
           >
           </RadarChart>
-        </div>
+        <LineChartGenerator
+            identity="https://api.fitbit.com/1.2/user/943HNF/activities/distance/date/2022-01-01/today.json"
+            chart-label="Distance Per Day This Year"
+            chart-background="#008CFFFF"
+            method-name="actLine"
+        >
+        </LineChartGenerator>
       </div>
 
     </div>
@@ -37,20 +52,23 @@
 // import PolarChart from "@/components/PolarChart";
 // import RadarChart from "@/components/Radar";
 import RadarChart from "@/components/Radar";
+import BarChart from "@/components/BarChart";
+import LineChartGenerator from "@/components/LineChart";
 // import Scatter from "@/components/Scatter";
 
 
 export default {
   name: 'App',
   components: {
+
     RadarChart,
     // BarChart,
-    // LineChartGenerator,
+    LineChartGenerator,
     // PolarChart,
     //
     // Doughnut,
     // Scatter,
-    // BarChart
+    BarChart
   },
   data() {
 

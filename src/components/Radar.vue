@@ -11,6 +11,9 @@
       :height="height"
       v-if="loaded"
       :identity="identity"
+      :identity2="identity2"
+      :identity3="identity3"
+      :identity4="identity4"
       :methodName="methodName"
 
   />
@@ -43,6 +46,15 @@ export default {
     },
 
     identity: {
+      type: String
+    },
+    identity2: {
+      type: String
+    },
+    identity3: {
+      type: String
+    },
+    identity4: {
       type: String
     },
     chartLabel: {
@@ -131,28 +143,29 @@ export default {
       loaded: false,
 
       requestData: {},
+      requestData2: {},
       chartData: {
         labels: [],
         datasets: [
           {
-            label: "Hours Asleep",
+            label: [],
             backgroundColor: "#ff4b00",
-            pointBackgroundcolor: "#b907ff",
+            pointBackgroundcolor: "",
             data: []
           },
 
           {
-            label: "Efficiency",
+            label: [],
             backgroundColor: "#ffc107",
             data: [],
           },
           {
-            label: "Hours Awake",
-            backgroundColor: "#c800ff",
+            label: [],
+            backgroundColor: "#a851dc",
             data: [],
           },
           {
-            label: "Time in bed",
+            label: [],
             backgroundColor: "#00ff44",
             data: [],
           },
@@ -170,6 +183,10 @@ export default {
       console.log(this.identity)
       console.log(json)
       this.requestData = await makeGetRequest(this.identity);
+      this.chartData.datasets[0].label.push("Hours while Asleep")
+      this.chartData.datasets[1].label.push("Efficiency Score")
+      this.chartData.datasets[2].label.push("Hours spent awake")
+      this.chartData.datasets[3].label.push("Total time in bed")
 
       this.requestData.sleep.forEach(sleep => {
 
@@ -178,6 +195,9 @@ export default {
         this.chartData.labels.push(sleep.dateOfSleep)
 
         // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+
+
+
         this.chartData.datasets[0].data.push(sleep.minutesAsleep / 60)
         this.chartData.datasets[1].data.push(sleep.efficiency / 10)
         this.chartData.datasets[2].data.push(sleep.minutesAwake / 60)
@@ -187,22 +207,118 @@ export default {
       this.loaded = true;
     },
     async activityRadar1() {
-      console.log(this.identity)
 
       this.requestData = await makeGetRequest(this.identity);
+      this.requestData2 = await makeGetRequest(this.identity2);
+      this.requestData3 = await makeGetRequest(this.identity3);
+      this.requestData4 = await makeGetRequest(this.identity4);
 
-      console.log(this.requestData)
 
-      this.requestData['activities-steps'].forEach(sleep => {
+     // console.log(this.requestData)
+      console.log(this.requestData2['activities-minutesLightlyActive'])
+
+      this.chartData.datasets[0].label.push("Sedentary")
+      this.chartData.datasets[1].label.push("Lightly Active")
+      this.chartData.datasets[2].label.push("Faily Active")
+      this.chartData.datasets[3].label.push("Very Active")
+
+      this.requestData['activities-minutesSedentary'].forEach(sleep => {
+        this.chartData.labels.push(sleep.dateTime)
 
         // this.requestData.sleep.forEach(sleep => {
 
         // eslint-disable-next-line vue/no-mutating-props
         // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[0].data.push(sleep.value / 60)
+
+      })
+
+      this.requestData2['activities-minutesLightlyActive'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        //this.chartData.labels.push(sleep.dateTime)
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[1].data.push(sleep.value / 60)
+
+      })
+
+      this.requestData3['activities-minutesFairlyActive'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        //this.chartData.labels.push(sleep.dateTime)
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[2].data.push(sleep.value / 60)
+
+      })
+
+      this.requestData4['activities-minutesVeryActive'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        //this.chartData.labels.push(sleep.dateTime)
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[3].data.push(sleep.value / 60)
+
+      })
+
+      this.loaded = true;
+    },
+    async activityRadar2() {
+
+      this.requestData = await makeGetRequest(this.identity);
+      this.requestData2 = await makeGetRequest(this.identity2);
+      this.requestData3 = await makeGetRequest(this.identity3);
+      this.requestData4 = await makeGetRequest(this.identity4);
+
+
+      // console.log(this.requestData)
+      console.log(this.requestData2['activities-minutesLightlyActive'])
+
+
+      this.requestData['activities-steps'].forEach(sleep => {
         this.chartData.labels.push(sleep.dateTime)
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
 
         // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
         this.chartData.datasets[0].data.push(sleep.value)
+
+      })
+
+      this.requestData2['activities-calories'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        //this.chartData.labels.push(sleep.dateTime)
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[1].data.push(sleep.value)
+
+      })
+
+      this.requestData3['activities-minutesSedentary'].forEach(sleep => {
+
+        // this.requestData.sleep.forEach(sleep => {
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        //this.chartData.labels.push(sleep.dateTime)
+        // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+        this.chartData.datasets[2].data.push(sleep.value)
 
       })
 

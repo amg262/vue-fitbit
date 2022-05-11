@@ -13,6 +13,7 @@
       :identity="identity"
       :methodName="methodName"
       :tension="tension"
+      :requestData="requestData"
   />
 </template>
 
@@ -159,6 +160,25 @@ export default {
 
       this.loaded = true;
     },
+    async actLine() {
+      console.log(this.identity)
+      console.log(json)
+      this.requestData = await makeGetRequest(this.identity);
+      console.log(this.requestData);
+      this.requestData['activities-distance'].forEach(sleep => {
+
+        this.chartData.datasets.fill = this.fill
+        this.chartData.datasets.borderColor = this.borderColor;
+        this.chartData.datasets.tension = this.tension;
+
+        // eslint-disable-next-line vue/no-mutating-props
+        // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+        this.chartData.labels.push(sleep.dateTime)
+        this.chartData.datasets[0].data.push(sleep.value)
+      })
+
+      this.loaded = true;
+    },
     async heartLine() {
       console.log(this.identity)
       console.log(json)
@@ -185,6 +205,8 @@ export default {
       this.sleepLine();
     } else if (this.methodName === 'heartLine') {
       this.heartLine();
+    } else if (this.methodName === 'actLine') {
+      this.actLine();
     }
   }
 }

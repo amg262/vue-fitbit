@@ -101,6 +101,27 @@ export default {
       })
 
       this.loaded = true;
+    },
+
+    async actBar() {
+
+
+      this.requestData = await makeGetRequest(this.identity);
+
+        this.requestData['activities-steps'].forEach(sleep => {
+          this.chartData.labels.push(sleep.dateTime)
+
+          // this.requestData.sleep.forEach(sleep => {
+
+          // eslint-disable-next-line vue/no-mutating-props
+          // this.chartCalculation += parseFloat(this.chartData.datasets[0].data.push(sleep.duration / 3600000));
+
+          // this.chartData.datasets[1].label.push(sleep.dateOfSleep)
+          this.chartData.datasets[0].data.push(sleep.value)
+
+        })
+        // eslint-disable-next-line vue/no-mutating-props
+      this.loaded = true;
     }
   },
   data() {
@@ -127,6 +148,8 @@ export default {
 
     if (this.methodName === 'sleepBar') {
       this.sleepBar();
+    } else if (this.methodName === 'actBar') {
+      this.actBar();
     }
   }
 }

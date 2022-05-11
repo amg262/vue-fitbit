@@ -168,14 +168,14 @@
         </div>
       </div>
 
-<!--      <HomeCard-->
-<!--          src='../assets/user.png'-->
-<!--          title="User"-->
-<!--          to="/user"-->
+      <!--      <HomeCard-->
+      <!--          image='@/assets/user.png'-->
+      <!--          title="User"-->
+      <!--          to="/user"-->
 
-<!--          pText="The User endpoints display information about the user's profile information and their badges-->
+      <!--          pText="The User endpoints display information about the user's profile information and their badges-->
 
-<!--                      collected."></HomeCard>-->
+      <!--                      collected."></HomeCard>-->
 
 
     </div>
@@ -187,10 +187,12 @@
 // @ is an alias to /src
 
 // import PieChart from "@/components/Pie";
+// import HomeCard from "@/components/HomeCard";
 
 export default {
   name: 'HomeView',
   components: {
+    // HomeCard
 
   }
 }

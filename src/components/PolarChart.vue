@@ -192,7 +192,7 @@ export default {
       console.log(this.requestData)
 
       this.chartData.labels.push("BMI")
-      this.chartData.labels.push("Fat")
+
       this.chartData.labels.push("Weight")
 
       this.requestData.weight.forEach(sleep => {
@@ -212,10 +212,10 @@ export default {
 
         this.chartData.datasets[0].data.push(sleep.bmi)
 
-        this.chartData.datasets[2].data.push(sleep.weight)
+        this.chartData.datasets[1].data.push(sleep.weight)
         this.chartData.datasets[0].label.push("BMI")
 
-        this.chartData.datasets[2].label.push("Weight")
+        this.chartData.datasets[1].label.push("Weight")
       })
 
       this.loaded = true;

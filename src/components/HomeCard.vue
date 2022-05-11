@@ -5,17 +5,17 @@
         <b-card no-body class="overflow-hidden" style="max-width: 540px;">
           <b-row no-gutters>
             <b-col md="6">
-              <img :src="src" alt="Image" class="rounded-0" height="240" width="240"/>
+              <img :src="image" alt="Image" class="rounded-0" height="240" width="240"/>
             </b-col>
             <b-col md="6">
               <b-card-body :title="title">
                 <b-card-text>
                   <p>
-                    <span :value="pText"></span>
+                    <span>{{ pText }}</span>
                   </p>
                   <button class="card-btn btn btn-outline-primary">
                     <router-link class="fb-card fb-btn" :to="to">
-                      <span :value="title"/>
+                      {{ title }}
                     </router-link>
                   </button>
                 </b-card-text>
@@ -34,29 +34,30 @@
 export default {
   name: "HomeCard",
   props: {
-    // text: {
-    //   type: String
-    // },
-    // img: {
-    //   type: String,
-    // }
+    pText: {
+      type: String
+    },
+    image: {
+      type: String
+    },
+    title: {
+      type: String
+    },
+    routerLink: {
+      type: String,
+    },
+    to: {
+      type: String
+    },
+
+
   },
   components: {},
 
   data() {
 
 
-    return {
-
-      pText: "",
-      image: "",
-      title: "",
-      routerLink:"",
-      to:"",
-      src: "",
-      user2: {},
-      user3: {},
-    }
+    return {}
   },
   methods: {
 
@@ -70,6 +71,12 @@ export default {
     }
   },
   async mounted() {
+  },
+  computed() {
+
+    var images = require.context('../assets/', false, /\.png$/)
+    return images('./' + this.image + ".png")
+
   }
 }
 </script>

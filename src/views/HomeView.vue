@@ -49,7 +49,7 @@
                       The Activity endpoints are used to query and/or modify a Fitbit user's daily activity data.
                     </p>
                     <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn" to="/body">
+                      <router-link class="fb-card fb-btn" to="/activity">
                         Activity
                       </router-link>
                     </button>

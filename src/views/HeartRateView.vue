@@ -13,7 +13,7 @@
       <!--      <InputForm @date-picked="popup"></InputForm>-->
 
       <RadarChart
-          identity="activities/heart/date/2022-05-01/today.json"
+          identity="activities/heart/date/2023-05-01/today.json"
           chart-label="2.5 Month Daily Activity"
           chart-background="#008CFFFF"
           method-name="hrRadar"
@@ -23,9 +23,9 @@
       </RadarChart>
 
       <LineChartGenerator
-          identity="activities/heart/date/2022-01-01/today.json"
+          identity="activities/heart/date/2023-01-01/today.json"
           method-name="heartLine"
-          chart-label="Resting Heart Rate for 2022"
+          chart-label="Resting Heart Rate for 2023"
           chart-background="#ff7c00"
           border-color="#4BC0C0FF"
           tension="0.5"
@@ -37,7 +37,7 @@
       <LineChartGenerator
           identity="activities/heart/date/2021-07-01/2021-12-31.json"
           method-name="heartLine"
-          chart-label="Resting Heart Rate for 2022"
+          chart-label="Resting Heart Rate for 2023"
           chart-background="#ffeb00"
           border-color="#35524a"
           tension="0.1"
@@ -48,7 +48,7 @@
       <LineChartGenerator
           identity="/activities/heart/date/2021-01-01/2021-06-30.json"
           method-name="heartLine"
-          chart-label="Resting Heart Rate for 2022"
+          chart-label="Resting Heart Rate for 2023"
           chart-background="#dc3545c2"
           border-color="#230dfd"
           tension="0.3"
@@ -91,7 +91,7 @@ export default {
   methods: {
     popup: function (date1, date2) {
       console.log(date1, date2)
-      this.v = "https://api.fitbit.com/1/user/943HNF/activities/heart/date/2022-01-01/today.json"
+      this.v = "https://api.fitbit.com/1/user/943HNF/activities/heart/date/2023-01-01/today.json"
 
     }
   },

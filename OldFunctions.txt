@@ -67,7 +67,7 @@ export default {
     async query() {
       // if (this.queryString) {
 
-      const url = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=10'
+      const url = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2023-04-27&sort=desc&offset=0&limit=10'
       // const li = 20;
       //let access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3c2xlIHdzb2MiLCJleHAiOjE2NTE3MTAzMzIsImlhdCI6MTY1MTEwNzA0MH0.Cu1HavUp_iTRD8GaFgLxybHvpRE8x2f6i9A9EVJyJC0"
 
@@ -163,7 +163,7 @@ export default {
     }
   },
   async mounted() {
-    let url2 = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=90'
+    let url2 = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2023-04-27&sort=desc&offset=0&limit=90'
 
     // console.log(processThat(url2));
     let v = await makeGetRequest(url2);

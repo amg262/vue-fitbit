@@ -17,7 +17,7 @@
         <strong>Average Daily Steps: </strong><span>{{ user2.averageDailySteps }}</span><br>
         <strong>Height: </strong><span>{{ user2.height }}</span><br>
         <strong>Member Since: </strong><span>{{ user2.memberSince }}</span><br>
-        <strong>Synced: </strong><span>{{ user3.lastSyncTime }}</span>
+<!--        <strong>Synced: </strong><span>{{ user3.lastSyncTime }}</span>-->
       </div>
 
 

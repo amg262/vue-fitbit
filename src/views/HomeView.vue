@@ -62,31 +62,31 @@
       </div>
 
 
-      <div class="col-md-4 mt-3 mb-3">
-        <div>
-          <b-card no-body class="overflow-hidden" style="max-width: 540px;">
-            <b-row no-gutters>
-              <b-col md="6">
-                <img src="../assets/body.gif" alt="Image" class="rounded-0" height="240" width="240"/>
-              </b-col>
-              <b-col md="6">
-                <b-card-body title="Body">
-                  <b-card-text>
-                    <p>
-                      The Body endpoints are used for querying and modifying the user's body fat and weight data.
-                    </p>
-                    <button class="card-btn btn btn-outline-primary">
-                      <router-link class="fb-card fb-btn" to="/body">
-                        Body
-                      </router-link>
-                    </button>
-                  </b-card-text>
-                </b-card-body>
-              </b-col>
-            </b-row>
-          </b-card>
-        </div>
-      </div>
+<!--      <div class="col-md-4 mt-3 mb-3">-->
+<!--        <div>-->
+<!--          <b-card no-body class="overflow-hidden" style="max-width: 540px;">-->
+<!--            <b-row no-gutters>-->
+<!--              <b-col md="6">-->
+<!--                <img src="../assets/body.gif" alt="Image" class="rounded-0" height="240" width="240"/>-->
+<!--              </b-col>-->
+<!--              <b-col md="6">-->
+<!--                <b-card-body title="Body">-->
+<!--                  <b-card-text>-->
+<!--                    <p>-->
+<!--                      The Body endpoints are used for querying and modifying the user's body fat and weight data.-->
+<!--                    </p>-->
+<!--                    <button class="card-btn btn btn-outline-primary">-->
+<!--                      <router-link class="fb-card fb-btn" to="/body">-->
+<!--                        Body-->
+<!--                      </router-link>-->
+<!--                    </button>-->
+<!--                  </b-card-text>-->
+<!--                </b-card-body>-->
+<!--              </b-col>-->
+<!--            </b-row>-->
+<!--          </b-card>-->
+<!--        </div>-->
+<!--      </div>-->
 
 
       <div class="col-md-4 mt-3 mb-3">

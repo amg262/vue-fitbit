@@ -11,7 +11,7 @@
       </div>
       <div class="row">
         <BarChart
-            identity="activities/steps/date/2022-01-01/today.json"
+            identity="activities/steps/date/2023-01-01/today.json"
             chart-label="Steps Per Day This Year"
             chart-background="#008CFFFF"
             method-name="actBar"
@@ -19,17 +19,17 @@
         </BarChart>
 
           <RadarChart
-              identity="activities/minutesSedentary/date/2022-03-01/today.json"
-              identity2="activities/minutesLightlyActive/date/2022-03-01/today.json"
-              identity3="activities/minutesFairlyActive/date/2022-03-01/today.json"
-              identity4="activities/minutesVeryActive/date/2022-03-01/today.json"
+              identity="activities/minutesSedentary/date/2023-03-01/today.json"
+              identity2="activities/minutesLightlyActive/date/2023-03-01/today.json"
+              identity3="activities/minutesFairlyActive/date/2023-03-01/today.json"
+              identity4="activities/minutesVeryActive/date/2023-03-01/today.json"
               chart-label="2.5 Month Daily Activity"
               chart-background="#008CFFFF"
               method-name="activityRadar1"
           >
           </RadarChart>
         <LineChartGenerator
-            identity="activities/distance/date/2022-01-01/today.json"
+            identity="activities/distance/date/2023-01-01/today.json"
             chart-label="Distance Per Day This Year"
             chart-background="#008CFFFF"
             method-name="actLine"

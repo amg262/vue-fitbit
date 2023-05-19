@@ -156,7 +156,7 @@ export default {
     async query() {
       // if (this.queryString) {
 
-        const url = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100'
+        const url = 'https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2023-04-27&sort=desc&offset=0&limit=100'
         // const li = 20;
         let access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
 
@@ -213,7 +213,7 @@ export default {
     // this.loaded = false
     // const access_token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzhGSzMiLCJzdWIiOiI5NDNITkYiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJ3aHIgd251dCB3cHJvIHdzbGUgd3dlaSB3c29jIHdhY3Qgd3NldCB3bG9jIiwiZXhwIjoxNjUwOTMwNTA1LCJpYXQiOjE2NTA4NDQxMDl9._eQFdJ-n0o9L5_j7KyKYqI6kY243AP_WZMpanEgqfG4"
     // try {
-    //   let response = fetch('https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100', {
+    //   let response = fetch('https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2023-04-27&sort=desc&offset=0&limit=100', {
     //     method: "GET",
     //     headers: {"Authorization": "Bearer " + access_token}
     //   })

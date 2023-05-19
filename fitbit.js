@@ -1,4 +1,4 @@
-fetch('https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2022-04-27&sort=desc&offset=0&limit=100', {
+fetch('https://api.fitbit.com/1.2/user/943HNF/sleep/list.json?beforeDate=2023-04-27&sort=desc&offset=0&limit=100', {
     method: "GET",
     headers: {"Authorization": "Bearer " + process.env.VUE_APP_FITBIT_API_KEY}
 })

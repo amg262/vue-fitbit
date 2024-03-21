@@ -76,6 +76,41 @@ export default {
       console.log(themeColors)
       alert('hi')
     },
+  },
+  // async function refreshAccessToken() {
+  //   const refreshToken = process.env.VUE_APP_FITBIT_REFRESH_TOKEN;
+  //
+  //   const config = {
+  //     method: 'post',
+  //     url: 'https://api.fitbit.com/oauth2/token',
+  //     headers: {
+  //       'Authorization': 'Basic ' + btoa('client_id:client_secret'),
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     },
+  //     data: {
+  //       grant_type: 'refresh_token',
+  //       refresh_token: refreshToken
+  //     }
+  //   };
+  //
+  //   try {
+  //     const response = await axios(config);
+  //     const newAccessToken = response.data.access_token;
+  //     // Update the access token in your application
+  //     process.env.VUE_APP_FITBIT_API_KEY = newAccessToken;
+  //     console.log('Access token refreshed successfully');
+  //   } catch (error) {
+  //     console.error('Error refreshing access token:', error);
+  //   }
+  // }
+  //
+  // // Call this function whenever you need to refresh the access token
+  // // For example, before making a request to Fitbit API
+  //
+  // // Check if access token is expired and refresh if needed
+  // if (/* logic to check if access token is expired */) {
+  //   refreshAccessToken();
+  // }
 
     // remove: function (item) {
     //   this.libraryBasket.removeBasketItem(item);
@@ -84,7 +119,7 @@ export default {
     //
     //
     // },
-  }
+  // }
 }
 </script>
 

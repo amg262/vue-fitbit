@@ -15,20 +15,25 @@
         <strong>Display Name: </strong><span>{{ user2.displayName }}</span><br>
         <strong>Age: </strong><span>{{ user2.age }}</span><br>
         <strong>Average Daily Steps: </strong><span>{{ user2.averageDailySteps }}</span><br>
-        <strong>Height: </strong><span>{{ user2.height }}</span><br>
+        <strong>Height: </strong><span>
+          {{ Math.floor((user2.height / 30.48)) }}'{{
+          Math.round(((user2.height / 30.48) - Math.floor((user2.height / 30.48))) * 12)
+        }}"
+        </span>
+        <br>
         <strong>Member Since: </strong><span>{{ user2.memberSince }}</span><br>
-<!--        <strong>Synced: </strong><span>{{ user3.lastSyncTime }}</span>-->
+        <!--        <strong>Synced: </strong><span>{{ user3.lastSyncTime }}</span>-->
       </div>
-
 
       <div class="col-md-4">
         <h4 @click="update('bogus')" style="text-align: center" class="mb-4">Battery Level</h4>
+
+        {{ user3}}
         <Doughnut
             identity="devices.json"
             method-name="deviceDough"
-        >
+        />
 
-        </Doughnut>
       </div>
       <div class="row">
         <h2>Top Badges</h2>
@@ -51,26 +56,28 @@
 
 <script>
 
-import '../models/ApiRequest'
-import {makeGetRequest} from "@/models/ApiRequest";
-import Doughnut from "@/components/Doughnut";
+import '../models/ApiRequest';
+import {makeGetRequest} from '@/models/ApiRequest';
+import Doughnut from '@/components/Doughnut';
 
 export default {
   name: 'UserProfile',
   props: {
     user1: {
-      type: Array
+      type: Array,
+    },
+    device1: {
+      type: Array,
     },
     identity: {
       type: String,
-    }
+    },
   },
   components: {
-    Doughnut
+    Doughnut,
   },
 
   data() {
-
 
     return {
       user2: {
@@ -81,8 +88,12 @@ export default {
         memberSince: '',
         topBadges: [],
 
-
       },
+      // device: {
+      //   battery: '',
+      //   batteryLevel: '',
+      //   lastSyncTime: '',
+      // },
       user3: {},
       //   loaded: false,
       //   chartData: {
@@ -100,18 +111,20 @@ export default {
       //     maintainAspectRatio: false
       //   }
       // }
-    }
+    };
   },
   methods: {
 
     async doThis1() {
-      let v = await makeGetRequest("profile.json");
-      let b = await makeGetRequest("devices.json");
+      let v = await makeGetRequest('profile.json');
+      let b = await makeGetRequest('devices.json');
       // console.log(v.user);
-      console.log(b);
+      console.log("b", b);
       //this.user2.avatar150 = v.user.avatar150;
       this.user2 = v.user;
-      this.user3 = b[1];
+      this.user3 = b[0].batteryLevel;
+
+      console.log("Battery Level", this.user3);
 
       var s = this.user3.lastSyncTime;
       // var date = new Date(this.user3.lastSyncTime);
@@ -121,8 +134,8 @@ export default {
     },
 
     update(bogus) {
-      this.$emit('update-data', bogus)
-    }
+      this.$emit('update-data', bogus);
+    },
   },
   async mounted() {
 
@@ -138,8 +151,8 @@ export default {
     //   })
     //
     // }
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

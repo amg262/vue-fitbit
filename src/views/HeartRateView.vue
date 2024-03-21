@@ -12,15 +12,25 @@
     <div class="row">
       <!--      <InputForm @date-picked="popup"></InputForm>-->
 
-      <RadarChart
-          identity="activities/heart/date/2023-05-01/today.json"
-          chart-label="2.5 Month Daily Activity"
-          chart-background="#008CFFFF"
-          method-name="hrRadar"
+<!--      <RadarChart-->
+<!--          identity="activities/heart/date/2023-05-01/today.json"-->
+<!--          chart-label="2.5 Month Daily Activity"-->
+<!--          chart-background="#008CFFFF"-->
+<!--          method-name="hrRadar"-->
 
-      >
+<!--      >-->
+<!--      </RadarChart>-->
 
-      </RadarChart>
+      <LineChartGenerator
+          identity="activities/heart/date/2024-01-01/today.json"
+          method-name="heartLine"
+          chart-label="Resting Heart Rate for 2024"
+          chart-background="#ff7c00"
+          border-color="#4BC0C0FF"
+          tension="0.5"
+          fill="true"
+      />
+
 
       <LineChartGenerator
           identity="activities/heart/date/2023-01-01/today.json"
@@ -72,13 +82,15 @@
 
 
 import LineChartGenerator from "@/components/LineChart";
+// import RadarChart from '@/components/Radar.vue';
 // import InputForm from "@/components/InputForm";
-import RadarChart from "@/components/Radar";
+// import RadarChart from "@/components/Radar";
 export default {
   name: 'App',
   components: {
+    // RadarChart,
 
-    RadarChart,
+    // RadarChart,
     // BarChart,
     LineChartGenerator,
     // InputForm,
